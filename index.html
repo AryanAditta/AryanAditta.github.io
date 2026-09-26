@@ -46,10 +46,11 @@
       <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">Menu</button>
       <nav class="nav" aria-label="Primary navigation">
         <a href="#research">Research</a>
-        <a href="#projects">Projects</a>
         <a href="#publications">Publications</a>
         <a href="#news">News</a>
+        <a href="#projects">Projects</a>
         <a href="#education">Education</a>
+        <a href="#technical">Technical Stack</a>
         <a href="#leadership">Leadership</a>
         <a href="#contact">Contact</a>
         <a class="nav-cv" href="https://raw.githubusercontent.com/AryanAditta/AryanAditta/main/Arian_Rahman_Aditta_CV_PhD.pdf" target="_blank" rel="noopener">CV ↗</a>
@@ -156,27 +157,11 @@
       </article>
     </section>
 
-    <section class="section muted" id="projects">
-      <div class="shell">
-        <div class="section-heading">
-          <p class="eyebrow dark">Engineering breadth</p>
-          <h2>Selected Engineering Projects</h2>
-          <p>Earlier engineering projects that complement my current RFIC, VLSI/EDA, and hardware-focused research.</p>
-        </div>
-        <div class="experience-grid">
-          <article class="experience-card">
-            <span class="date">RF / Microwave</span>
-            <h3>Dual-Band Microstrip Patch Antenna</h3>
-            <p>Designed and simulated a dual-band microstrip patch antenna operating near 10&nbsp;GHz and 21&nbsp;GHz using CST Studio Suite, with analysis of impedance matching, VSWR, radiation behavior, and surface-current distribution.</p>
-          </article>
-          <article class="experience-card">
-            <span class="date">Digital Signal Processing</span>
-            <h3>FIR Filter Design Using Windowing Techniques</h3>
-            <p>Implemented and analyzed low-pass, high-pass, band-pass, and band-stop FIR filters in MATLAB using rectangular, Hann, Hamming, and Blackman windows, including frequency-response and audio-filtering experiments.</p>
-          </article>
-        </div>
-      </div>
-    </section>
+
+
+
+
+
 
     <section class="section muted" id="publications">
       <div class="shell">
@@ -223,7 +208,6 @@
         </div>
       </div>
     </section>
-
     <section class="section shell" id="news">
       <div class="section-heading compact">
         <p class="eyebrow dark">Recent milestones</p>
@@ -237,7 +221,31 @@
         <div class="timeline-item"><time>2025</time><p>Coauthored Vision Transformer work published in Springer CCIS through GLOW 2025.</p></div>
       </div>
     </section>
-
+    <section class="section muted" id="projects">
+      <div class="shell">
+        <div class="section-heading">
+          <p class="eyebrow dark">Engineering breadth</p>
+          <h2>Selected Engineering Projects</h2>
+          <p>Earlier engineering projects that complement my current RFIC, VLSI/EDA, and hardware-focused research.</p>
+        </div>
+        <div class="experience-grid">
+          <article class="experience-card">
+            <span class="date">RF / Microwave</span>
+            <h3>Dual-Band Microstrip Patch Antenna</h3>
+            <p>Designed and simulated a dual-band microstrip patch antenna operating near 10&nbsp;GHz and 21&nbsp;GHz, with analysis of impedance matching, VSWR, radiation behavior, and surface-current distribution.</p>
+            <div class="tag-row"><span>CST Studio Suite</span><span>EM Simulation</span><span>S-Parameters</span></div>
+            <p><a class="pub-title link" href="https://github.com/AryanAditta/Dual-Band-Patch-Antenna" target="_blank" rel="noopener">View project on GitHub ↗</a></p>
+          </article>
+          <article class="experience-card">
+            <span class="date">Digital Signal Processing</span>
+            <h3>FIR Filter Design Using Windowing Techniques</h3>
+            <p>Implemented and analyzed low-pass, high-pass, band-pass, and band-stop FIR filters using multiple windowing techniques, including frequency-response and audio-filtering experiments.</p>
+            <div class="tag-row"><span>MATLAB</span><span>Signal Processing</span><span>FIR Design</span></div>
+            <p><a class="pub-title link" href="https://github.com/AryanAditta/FIR-Filter-Design" target="_blank" rel="noopener">View project on GitHub ↗</a></p>
+          </article>
+        </div>
+      </div>
+    </section>
     <section class="section muted" id="education">
       <div class="shell split-section">
         <div>
@@ -259,7 +267,20 @@
         </aside>
       </div>
     </section>
-
+    <section class="section skills-section" id="technical">
+      <div class="shell">
+        <div class="section-heading compact light">
+          <p class="eyebrow">Tools & methods</p>
+          <h2>Technical stack</h2>
+        </div>
+        <div class="skills-grid">
+          <div><h3>RFIC / Circuit / EM</h3><p>IHP SG13G2 · Qucs-S · ngspice · Xyce · KLayout · openEMS · CST Studio Suite · LTspice · Cadence Virtuoso</p></div>
+          <div><h3>VLSI / EDA / RTL</h3><p>Verilog · Yosys · OpenSTA · RTL analysis · synthesis/STA workflows · B*-tree floorplanning · physical-design optimization</p></div>
+          <div><h3>ML / Scientific Computing</h3><p>Python · PyTorch · TensorFlow/Keras · scikit-learn · XGBoost · NumPy · Pandas · GNNs · tree-based models</p></div>
+          <div><h3>Embedded / Other</h3><p>Raspberry Pi · ESP32 · Arduino · OpenCV · C · C++ · MATLAB · Git · LaTeX</p></div>
+        </div>
+      </div>
+    </section>
     <section class="section shell" id="leadership">
       <div class="section-heading">
         <p class="eyebrow dark">Beyond research</p>
@@ -292,16 +313,16 @@
         <article class="experience-card">
           <span class="date">Jun 2024–Jun 2025</span>
           <h3>XCEED Talent Ambassador · British American Tobacco (BAT)</h3>
-          <p>Represented KUET through BAT Bangladesh’s XCEED Talent Ambassador program and supported university engagement for the flagship <em>Battle of Minds</em> competition, which involved more than 1,500 teams. Helped secure participation from more than 50 KUET teams and took part in professional-development sessions on communication, presentation, and workplace readiness.</p>
+          <p>Represented KUET through BAT Bangladesh’s XCEED program, supporting <em>Battle of Minds</em> outreach and helping secure participation from 50+ KUET teams. Also joined professional-development sessions on communication and workplace readiness.</p>
         </article>
         <article class="experience-card">
-          <span class="date">Undergraduate</span>
+          <span class="date">2023–2024</span>
           <h3>Event Management Leadership · Hult Prize at KUET</h3>
           <p>Led event-management and promotional initiatives, introduced HULTPRENIA Season&nbsp;1, supported participation from more than 80 teams, organized online and offline seminars with industry speakers, and helped execute the on-campus Hult Grand Finale. Received a Best Executive recognition for contribution to the event.</p>
         </article>
         <article class="experience-card">
-          <span class="date">Undergraduate</span>
-          <h3>Organizing Secretary · KUET Business & Entrepreneurship Club</h3>
+          <span class="date">2023–2026</span>
+          <h3>Finance Secretary · KUET Business & Entrepreneurship Club</h3>
           <p>Contributed to national case competitions, recruitment campaigns, entrepreneurship events, and promotional outreach. Co-led a recruitment campaign that drew more than 500 applicants and supported participant coordination, evaluation flow, content development, and event execution.</p>
         </article>
         <article class="experience-card">
@@ -319,22 +340,6 @@
         </article>
       </div>
     </section>
-
-    <section class="section skills-section">
-      <div class="shell">
-        <div class="section-heading compact light">
-          <p class="eyebrow">Tools & methods</p>
-          <h2>Technical stack</h2>
-        </div>
-        <div class="skills-grid">
-          <div><h3>RFIC / Circuit / EM</h3><p>IHP SG13G2 · Qucs-S · ngspice · Xyce · KLayout · openEMS · CST Studio Suite · LTspice · Cadence Virtuoso</p></div>
-          <div><h3>VLSI / EDA / RTL</h3><p>Verilog · Yosys · OpenSTA · RTL analysis · synthesis/STA workflows · B*-tree floorplanning · physical-design optimization</p></div>
-          <div><h3>ML / Scientific Computing</h3><p>Python · PyTorch · TensorFlow/Keras · scikit-learn · XGBoost · NumPy · Pandas · GNNs · tree-based models</p></div>
-          <div><h3>Embedded / Other</h3><p>Raspberry Pi · ESP32 · Arduino · OpenCV · C · C++ · MATLAB · Git · LaTeX</p></div>
-        </div>
-      </div>
-    </section>
-
     <section class="section shell contact" id="contact">
       <div class="contact-card">
         <div>
