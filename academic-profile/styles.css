@@ -52,8 +52,8 @@ img{display:block;max-width:100%}
 .section-heading p:not(.eyebrow){margin:0;color:var(--muted)}
 .profile-card{padding:30px;border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow);background:white}
 .profile-card>p{margin-top:0;font-size:1.05rem}
-.interest-grid,.teaching-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:22px}
-.interest-grid span,.teaching-grid div{padding:13px 14px;border:1px solid var(--line);border-radius:10px;background:var(--soft);font-weight:700;color:#334a61}
+.teaching-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:22px}
+.teaching-grid div{padding:13px 14px;border:1px solid var(--line);border-radius:10px;background:var(--soft);font-weight:700;color:#334a61}
 .education-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:18px}
 .edu-card,.research-list article,.experience-grid article,.leadership-grid article,.reference-grid article,.manuscript-grid article{background:white;border:1px solid var(--line);border-radius:15px;padding:22px}
 .edu-card.feature{box-shadow:var(--shadow)}
@@ -72,18 +72,31 @@ img{display:block;max-width:100%}
 .pub-list p{margin:6px 0 0;color:#566574}
 .pub-list a{color:var(--blue);font-weight:700}
 .badge{display:inline-block;padding:3px 8px;border-radius:999px;background:#e4eef9;color:var(--navy);font-size:.75rem;font-weight:800}
-.badge.muted{background:#edf0f4;color:#4d5a66}
+.badge.submitted{background:#e7f0fb;color:#285f98;border:1px solid #cbdff3}
+.badge.revision{background:#fbf1dd;color:#8a6421;border:1px solid #ecd9b2}
 .manuscript-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.research-subsection{margin-top:28px}
+.research-subsection + .research-subsection{margin-top:42px}
+.research-subheading{display:flex;align-items:center;gap:14px;margin-bottom:14px}
+.research-subheading>span{display:grid;place-items:center;width:38px;height:38px;border-radius:10px;background:var(--sky);color:var(--blue);font-weight:850}
+.research-subheading .eyebrow{margin:0 0 2px}
+.research-subheading h3{margin:0;color:var(--navy2);font-size:1.35rem}
 .research-list{display:grid;gap:16px}
+.research-list.ongoing-grid{grid-template-columns:1fr 1fr}
 .research-list article{border-left:4px solid var(--blue)}
-.skills-section{background:linear-gradient(110deg,var(--navy2),var(--navy));color:white}
-.section-heading.light h2,.section-heading.light .eyebrow{color:white}
+.skills-section{background:#eef4fa;color:var(--ink);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 .skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-.skills-grid div{padding:18px;border:1px solid rgba(255,255,255,.16);border-radius:12px;background:rgba(255,255,255,.06)}
-.skills-grid h3{margin:0 0 7px;color:white}
-.skills-grid p{margin:0;color:#dbe6f0}
+.skills-grid div{padding:20px;border:1px solid #cfdbe7;border-radius:12px;background:#fff;box-shadow:0 8px 22px rgba(23,54,93,.06)}
+.skills-grid h3{margin:0 0 7px;color:var(--navy2)}
+.skills-grid p{margin:0;color:#536273}
+.honors-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.honor-card{background:white;border:1px solid var(--line);border-radius:15px;padding:22px}
+.honor-card.featured{border-top:4px solid var(--gold);box-shadow:var(--shadow)}
+.honor-card h3{margin:0 0 7px;color:var(--navy2)}
+.honor-card p{margin-bottom:0;color:var(--muted)}
 .experience-grid,.leadership-grid,.reference-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
 .leadership-grid article{box-shadow:var(--shadow)}
+.feature-leadership{border-top:4px solid var(--blue)!important}
 .reference-grid a{color:var(--blue);font-weight:700}
 .contact-section{padding:70px 0;background:#eef4fa}
 .contact-card{display:grid;grid-template-columns:1.35fr .65fr;gap:36px;align-items:center;padding:34px;border:1px solid #cfdbe7;border-radius:18px;background:white;box-shadow:var(--shadow)}
@@ -100,16 +113,15 @@ img{display:block;max-width:100%}
   .hero-side{max-width:520px}
   .education-grid{grid-template-columns:1fr 1fr}
   .education-grid .feature{grid-column:1/-1}
-  .interest-grid{grid-template-columns:1fr 1fr}
   .teaching-grid{grid-template-columns:1fr 1fr}
-  .skills-grid{grid-template-columns:1fr 1fr}
+  .skills-grid,.honors-grid,.research-list.ongoing-grid{grid-template-columns:1fr 1fr}
 }
 @media(max-width:680px){
   .shell{width:min(100% - 28px,var(--max))}
   .section{padding:56px 0}
   .hero h1{font-size:2.75rem}
   .education-grid,.manuscript-grid,.experience-grid,.leadership-grid,.reference-grid,.contact-card{grid-template-columns:1fr}
-  .interest-grid,.teaching-grid,.skills-grid{grid-template-columns:1fr}
+  .teaching-grid,.skills-grid,.honors-grid,.research-list.ongoing-grid{grid-template-columns:1fr}
   .quick-card{grid-template-columns:1fr}
   .quick-card div,.quick-card div:nth-child(odd){border-right:0;border-bottom:1px solid var(--line)}
   .quick-card div:last-child{border-bottom:0}
