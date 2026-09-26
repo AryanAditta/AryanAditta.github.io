@@ -77,9 +77,9 @@ img{display:block;max-width:100%}
 .manuscript-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
 .research-group{margin-top:30px}
 .research-group + .research-group{margin-top:38px}
-.group-heading{margin-bottom:14px}
+.group-heading{margin-bottom:16px;padding:16px 18px;border:1px solid #cfe0f2;border-radius:12px;background:#eef5fc}
 .group-heading h3{margin:0 0 4px;color:var(--navy2);font-size:1.2rem}
-.group-heading p{margin:0;color:var(--muted);font-size:.95rem}
+.group-heading p{margin:0;color:#5b6f82;font-size:.95rem}
 .research-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
 .research-card{background:#fff;border:1px solid var(--line);border-radius:15px;padding:22px;box-shadow:0 8px 22px rgba(23,54,93,.05)}
 .research-card h3{margin:0 0 7px;color:var(--navy2);line-height:1.3}
