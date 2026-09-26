@@ -75,6 +75,7 @@ img{display:block;max-width:100%}
 .badge.submitted{background:#e7f0fb;color:#285f98;border:1px solid #cbdff3}
 .badge.revision{background:#fbf1dd;color:#8a6421;border:1px solid #ecd9b2}
 .manuscript-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.manuscript-grid article .badge{margin-bottom:10px}
 .research-group{margin-top:30px}
 .research-group + .research-group{margin-top:38px}
 .group-heading{margin-bottom:16px;padding:16px 18px;border:1px solid #cfe0f2;border-radius:12px;background:#eef5fc}
