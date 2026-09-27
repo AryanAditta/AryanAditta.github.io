@@ -44,7 +44,7 @@ img{display:block;max-width:100%}
 .quick-card div:nth-child(odd){border-right:1px solid var(--line)}
 .quick-card div:nth-child(3),.quick-card div:nth-child(4){border-bottom:0}
 .quick-card strong{display:block;font-size:1.2rem;color:var(--navy)}
-.quick-card span{font-size:.8rem;color:var(--navy2);font-weight:800}
+.quick-card span{font-size:.8rem;color:var(--muted);font-weight:400}
 .section{padding:74px 0}
 .section.alt{background:var(--soft)}
 .section-heading{max-width:820px;margin-bottom:30px}
@@ -60,7 +60,7 @@ img{display:block;max-width:100%}
 .institution{font-weight:700;color:#495a6a}
 .stats{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0}
 .stats span{padding:8px 10px;border-radius:8px;background:var(--sky);font-size:.9rem;font-weight:400}
-.edu-card .stats strong{font-weight:400}
+.edu-card .stats strong{font-weight:800}
 .compact-stats{margin-top:16px}
 .compact-stats span{white-space:nowrap}
 .teaching-grid{grid-template-columns:repeat(3,1fr)}
