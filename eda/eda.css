@@ -1,0 +1,4 @@
+/* EDA profile-specific refinements layered on the shared site design. */
+.eda-subheading { margin-top: 52px; }
+.eda-subheading h2 { font-size: clamp(1.8rem, 3vw, 2.5rem); }
+.eda-manuscript { border-color: #c7dce8; box-shadow: 0 10px 28px rgba(23,119,168,.06); }
