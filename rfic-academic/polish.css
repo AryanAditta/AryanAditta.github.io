@@ -126,6 +126,14 @@
   font-size: 14.25px;
   line-height: 1.62;
 }
+.complementary-card > ul:not(.tags) {
+  color: #414b50;
+  font-size: 13.25px;
+  line-height: 1.56;
+}
+.complementary-card > ul:not(.tags) li {
+  margin-bottom: 7px;
+}
 .complementary-card .status-row { margin-bottom: 12px; }
 
 /* RF matching visual on homepage. */
