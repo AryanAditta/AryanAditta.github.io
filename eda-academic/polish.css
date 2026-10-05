@@ -33,7 +33,7 @@
   display: block;
   margin-bottom: 7px;
   color: #2f6a86;
-  font-size: 12.25px;
+  font-size: 13px;
   font-weight: 800;
   letter-spacing: 0.065em;
   text-transform: uppercase;
@@ -55,9 +55,9 @@
   width: 100%;
   color: #1f2428;
   font-family: "Source Serif 4", Georgia, "Times New Roman", serif;
-  font-size: 1.46rem;
+  font-size: 1.62rem;
   font-weight: 700;
-  line-height: 1.28;
+  line-height: 1.22;
   text-align: center;
 }
 
@@ -182,7 +182,7 @@
   .edu-stats { grid-template-columns: 1fr; padding: 8px 0; }
   .edu-stats > span { min-height: auto; padding: 13px 0; }
   .edu-stats > span + span { border-left: 0; border-top: 1px solid #e1e7e4; }
-  .edu-value { font-size: 1.36rem; }
+  .edu-value { font-size: 1.48rem; }
   .tool-grid > .panel { min-height: auto; }
   .debate-list { grid-template-columns: 1fr; gap: 8px; }
 }
