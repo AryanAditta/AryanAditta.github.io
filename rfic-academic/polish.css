@@ -92,7 +92,7 @@
 /* Homepage featured research visuals: image with centered full-overview link beneath it. */
 .feature-visual-captioned {
   flex-direction: column;
-  gap: 9px;
+  gap: 8px;
   padding: 16px 16px 12px;
 }
 .feature-visual-captioned .feature-image-link {
@@ -108,16 +108,21 @@
   object-fit: contain;
 }
 .feature-overview-link {
-  display: inline-block;
-  margin-top: 1px;
+  display: block;
+  width: 100%;
+  margin: 3px 0 0;
+  padding: 3px 0 1px;
   color: #526168;
-  font-size: 12.5px;
+  font-size: 14px;
   font-weight: 500;
   line-height: 1.35;
   text-decoration: none;
   text-align: center;
 }
-.feature-overview-link:hover { color: #173b52; }
+.feature-overview-link:hover {
+  color: #173b52;
+  text-decoration: none;
+}
 
 /* Main RFIC research: figure on the left, identity/summary on the right, detailed bullets below. */
 .research-card-stacked {
