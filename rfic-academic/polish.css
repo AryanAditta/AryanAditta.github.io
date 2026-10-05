@@ -82,32 +82,75 @@
   line-height: 1.55;
 }
 
-/* Main RFIC research: use a wide figure above the narrative instead of a narrow side-by-side layout. */
+/* Main RFIC research: figure on the left, identity/summary on the right, detailed bullets below. */
 .research-card-stacked {
-  grid-template-columns: 1fr;
-  gap: 20px;
+  grid-template-columns: minmax(340px, 44%) minmax(0, 1fr);
+  column-gap: 30px;
+  row-gap: 10px;
   align-items: start;
 }
 .research-card-stacked .research-visual-wide {
+  grid-column: 1;
+  grid-row: 1 / span 4;
   min-height: 0;
-  padding: 15px 17px 11px;
+  align-self: start;
+  padding: 12px 13px 9px;
   justify-content: flex-start;
 }
 .research-card-stacked .research-visual-wide a {
   width: 100%;
   min-height: 0;
+  flex: 0 0 auto;
 }
 .research-card-stacked .research-visual-wide img {
   width: 100%;
-  max-height: 480px;
+  max-height: none;
   object-fit: contain;
 }
 .research-card-stacked .research-copy-wide {
-  max-width: 930px;
+  display: contents;
 }
-.research-card-stacked .research-copy-wide > p:not(.meta):not(.research-note) {
-  color: #3f474b;
-  line-height: 1.64;
+.research-card-stacked .research-copy-wide > .status-row {
+  grid-column: 2;
+  grid-row: 1;
+  margin: 2px 0 0;
+  align-self: end;
+}
+.research-card-stacked .research-copy-wide > .meta {
+  grid-column: 2;
+  grid-row: 2;
+  margin: 0;
+}
+.research-card-stacked .research-copy-wide > h2 {
+  grid-column: 2;
+  grid-row: 3;
+  margin: 0;
+  font-size: 1.46rem;
+}
+.research-card-stacked .research-copy-wide > .research-question {
+  grid-column: 2;
+  grid-row: 4;
+  margin: 4px 0 0;
+  align-self: start;
+}
+.research-card-stacked .research-copy-wide > ul:not(.tags) {
+  grid-column: 1 / -1;
+  grid-row: 5;
+  margin: 13px 0 0 20px;
+  padding: 0;
+}
+.research-card-stacked .research-copy-wide > ul:not(.tags) li {
+  margin-bottom: 8px;
+}
+.research-card-stacked .research-copy-wide > .research-note {
+  grid-column: 1 / -1;
+  grid-row: 6;
+  margin: 4px 0 0;
+}
+.research-card-stacked .research-copy-wide > .tags {
+  grid-column: 1 / -1;
+  grid-row: 7;
+  margin-top: 4px;
 }
 
 /* Complementary EDA work should read as substantial research experience, not footnotes. */
@@ -210,6 +253,27 @@
   line-height: 1.32;
 }
 
+@media (max-width: 820px) {
+  .research-card-stacked {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  .research-card-stacked .research-visual-wide,
+  .research-card-stacked .research-copy-wide > .status-row,
+  .research-card-stacked .research-copy-wide > .meta,
+  .research-card-stacked .research-copy-wide > h2,
+  .research-card-stacked .research-copy-wide > .research-question,
+  .research-card-stacked .research-copy-wide > ul:not(.tags),
+  .research-card-stacked .research-copy-wide > .research-note,
+  .research-card-stacked .research-copy-wide > .tags {
+    grid-column: 1;
+    grid-row: auto;
+  }
+  .research-card-stacked .research-copy-wide > .status-row { margin-top: 2px; }
+  .research-card-stacked .research-copy-wide > .meta { margin-top: -4px; }
+  .research-card-stacked .research-copy-wide > ul:not(.tags) { margin-top: 7px; }
+}
+
 @media (max-width: 720px) {
   .edu-stats { grid-template-columns: 1fr; padding: 8px 0; }
   .edu-stats > span { min-height: auto; padding: 13px 0; }
@@ -219,6 +283,5 @@
   .debate-list { grid-template-columns: 1fr; gap: 8px; }
   .rf-flow-line { flex-direction: column; }
   .rf-flow-line b { transform: rotate(90deg); }
-  .research-card-stacked .research-visual-wide img { max-height: 360px; }
   .complementary-card { height: auto; }
 }
