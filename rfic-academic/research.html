@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css?v=1" />
-  <link rel="stylesheet" href="polish.css?v=1" />
+  <link rel="stylesheet" href="polish.css?v=2" />
   <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
   <link rel="canonical" href="https://aryanaditta.github.io/rfic-academic/research.html" />
 </head>
@@ -35,28 +35,23 @@
       <p class="section-intro">My RFIC research centers on the transition from circuit-level design to physically meaningful implementation: process-aware passives, electromagnetic effects, impedance matching, stability and reproducible simulation-based verification.</p>
     </div>
 
-    <article class="research-card" id="pa">
-      <div class="research-visual">
+    <article class="research-card research-card-stacked" id="pa">
+      <div class="research-visual research-visual-wide">
         <a href="https://raw.githubusercontent.com/AryanAditta/AryanAditta/main/assets/research/pa-research-overview.png" target="_blank" rel="noopener" aria-label="Open 28 GHz SiGe PA research overview image">
           <img src="https://raw.githubusercontent.com/AryanAditta/AryanAditta/main/assets/research/pa-research-overview.png" alt="Overview of the 28 GHz SiGe power amplifier research workflow" loading="lazy" />
         </a>
         <span>Open full research overview ↗</span>
       </div>
-      <div class="research-copy">
+      <div class="research-copy research-copy-wide">
         <div class="status-row"><span class="badge submitted">Manuscript Submitted</span><span class="badge first">First Author</span></div>
         <p class="meta">Undergraduate Thesis · KUET · 2026</p>
-        <h2>Open-Source RFIC Design & Verification of a 28 GHz Two-Stage Class-A SiGe Power Amplifier</h2>
+        <h2>Open-Source RFIC Design and Verification of a 28-GHz Two-Stage Class-A SiGe Power Amplifier with Machine-Learning-Assisted Optimization</h2>
         <div class="research-question"><strong>Research question:</strong> How can an open-source-compatible RFIC flow carry a mmWave power amplifier from schematic design toward process-aware and EM-aware realization while preserving gain, matching and stability?</div>
-        <p>I designed a two-stage Class-A power amplifier centered at 28 GHz using the IHP SG13G2 130-nm SiGe BiCMOS Open PDK. The work treats circuit simulation as the primary evidence and progressively introduces more realistic passive and electromagnetic effects.</p>
-        <ul>
-          <li>Built the RF circuit and verification flow around Qucs-S with ngspice/Xyce-based simulation and Python-assisted analysis.</li>
-          <li>Progressed from ideal-passive design to PDK-aware components and EM-characterized passive structures using KLayout and openEMS-compatible workflows.</li>
-          <li>Evaluated S-parameters, impedance matching, reverse isolation and unconditional stability across the realization stages.</li>
-          <li>The final process-aware simulation achieved approximately 17.4 dB gain at 28 GHz with S11/S22 near −13 dB and K ≈ 12.</li>
-          <li>Machine learning was used only as a supporting design-space exploration tool rather than as a replacement for circuit simulation or RF verification.</li>
-        </ul>
-        <p class="research-note"><strong>Scope:</strong> Simulation-based work. No fabricated-silicon or measured-performance claim is made; future work extends toward full-custom layout, DRC/LVS and extracted/post-layout verification.</p>
-        <ul class="tags"><li>IHP SG13G2</li><li>SiGe BiCMOS</li><li>28 GHz PA</li><li>S-Parameters</li><li>Impedance Matching</li><li>Stability</li><li>KLayout</li><li>EM-Aware Design</li></ul>
+        <p>Designed and simulated a two-stage 28-GHz Class-A SiGe power amplifier using the IHP SG13G2 130-nm SiGe BiCMOS Open PDK and an open-source RFIC workflow based on Qucs-S, ngspice/Xyce, KLayout and EM-aware modeling.</p>
+        <p>Developed a progressive ideal-passive → PDK-aware → EM-aware realization workflow. The final process-aware configuration achieved approximately 17.4 dB gain at 28 GHz, with S11/S22 near −13 dB and K ≈ 12, allowing the effect of increasingly realistic passive implementation to be evaluated directly.</p>
+        <p>Used machine learning as a supporting design-exploration layer for candidate screening while retaining circuit simulation as the primary verification authority. The work is being extended toward layout/GDSII-level realization, with a first-author thesis-derived manuscript submitted to ICCIT 2026.</p>
+        <p class="research-note"><strong>Scope:</strong> Simulation-based work. No fabricated-silicon or measured-performance claim is made; the next implementation stage is full-custom layout followed by DRC/LVS and extracted/post-layout verification.</p>
+        <ul class="tags"><li>IHP SG13G2</li><li>SiGe BiCMOS</li><li>28 GHz PA</li><li>Qucs-S</li><li>ngspice/Xyce</li><li>S-Parameters</li><li>Impedance Matching</li><li>Stability</li><li>KLayout</li><li>EM-Aware Design</li></ul>
       </div>
     </article>
 
@@ -80,16 +75,20 @@
 
     <section>
       <div class="section-head"><p class="kicker">Broader Design-Automation Background</p><h2>Complementary VLSI/EDA Work</h2></div>
-      <div class="grid-2">
-        <article class="card support-card">
+      <div class="grid-2 complementary-grid">
+        <article class="card support-card complementary-card">
+          <div class="status-row"><span class="badge submitted">Manuscript Submitted</span><span class="badge first">First Author</span></div>
           <h3>Learning-Guided VLSI Floorplanning</h3>
-          <p>Independent work on graph-based guidance for constraint-rich floorplanning, combining learning with explicit combinatorial optimization and exact legality checks.</p>
-          <ul class="tags"><li>Physical Design</li><li>GNN</li><li>B*-Tree</li><li>Optimization</li></ul>
+          <p>Independent research on learning-guided physical design for constraint-rich, outline-aware floorplanning. The work combines graph-based circuit representations with B*-tree simulated annealing, structured legalization and exact feasibility checks so that learned guidance improves search without replacing explicit physical-design constraints.</p>
+          <p>The broader study also examines where direct neural floorplanning succeeds and where discrete structure is still necessary, especially the gap between learning strong global placement geometry and achieving exact local legality. This provides a complementary perspective on ML-assisted EDA: learning is used as a design prior while optimization remains responsible for hard feasibility.</p>
+          <ul class="tags"><li>Physical Design</li><li>Graph Neural Networks</li><li>B*-Tree</li><li>Simulated Annealing</li><li>Constraint Handling</li><li>Optimization</li></ul>
         </article>
-        <article class="card support-card">
+        <article class="card support-card complementary-card">
+          <div class="status-row"><span class="badge">Ongoing Research</span></div>
           <h3>Leakage-Aware RTL-to-QoR Prediction</h3>
-          <p>Research collaboration on early area and timing estimation from RTL with source-aware evaluation, duplicate control, structural modeling and explainability.</p>
-          <ul class="tags"><li>RTL</li><li>QoR Prediction</li><li>Yosys</li><li>OpenSTA</li></ul>
+          <p>Research collaboration on predicting mapped area and pre-layout timing from RTL before full synthesis and timing analysis. The workflow emphasizes source provenance, duplicate and near-duplicate control and component-aware grouping so model evaluation better reflects generalization to genuinely different RTL designs.</p>
+          <p>The current direction studies structural-complexity regimes, size-aware prediction, explainability and coverage awareness using RTL-derived features with Yosys and OpenSTA-based flows. The goal is not only to produce early QoR estimates, but also to understand when those estimates are trustworthy and which RTL structures are driving them.</p>
+          <ul class="tags"><li>RTL</li><li>QoR Prediction</li><li>Yosys</li><li>OpenSTA</li><li>Leakage-Aware Evaluation</li><li>Explainability</li></ul>
         </article>
       </div>
     </section>
