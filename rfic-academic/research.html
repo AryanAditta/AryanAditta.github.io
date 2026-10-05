@@ -47,9 +47,13 @@
         <p class="meta">Undergraduate Thesis · KUET · 2026</p>
         <h2>Open-Source RFIC Design and Verification of a 28-GHz Two-Stage Class-A SiGe Power Amplifier with Machine-Learning-Assisted Optimization</h2>
         <div class="research-question"><strong>Research question:</strong> How can an open-source-compatible RFIC flow carry a mmWave power amplifier from schematic design toward process-aware and EM-aware realization while preserving gain, matching and stability?</div>
-        <p>Designed and simulated a two-stage 28-GHz Class-A SiGe power amplifier using the IHP SG13G2 130-nm SiGe BiCMOS Open PDK and an open-source RFIC workflow based on Qucs-S, ngspice/Xyce, KLayout and EM-aware modeling.</p>
-        <p>Developed a progressive ideal-passive → PDK-aware → EM-aware realization workflow. The final process-aware configuration achieved approximately 17.4 dB gain at 28 GHz, with S11/S22 near −13 dB and K ≈ 12, allowing the effect of increasingly realistic passive implementation to be evaluated directly.</p>
-        <p>Used machine learning as a supporting design-exploration layer for candidate screening while retaining circuit simulation as the primary verification authority. The work is being extended toward layout/GDSII-level realization, with a first-author thesis-derived manuscript submitted to ICCIT 2026.</p>
+        <ul>
+          <li>Designed and simulated a two-stage 28-GHz Class-A SiGe power amplifier using the IHP SG13G2 130-nm SiGe BiCMOS Open PDK and an open-source RFIC workflow based on Qucs-S, ngspice/Xyce, KLayout and EM-aware modeling.</li>
+          <li>Developed a progressive ideal-passive → PDK-aware → EM-aware realization workflow to study how increasingly realistic passive implementation changes RF performance.</li>
+          <li>The final process-aware configuration achieved approximately 17.4 dB gain at 28 GHz, with S11/S22 near −13 dB and K ≈ 12.</li>
+          <li>Used machine learning as a supporting design-exploration layer for candidate screening while retaining circuit simulation as the primary verification authority.</li>
+          <li>Currently extending the work toward layout/GDSII-level realization; a first-author thesis-derived manuscript has been submitted to ICCIT 2026.</li>
+        </ul>
         <p class="research-note"><strong>Scope:</strong> Simulation-based work. No fabricated-silicon or measured-performance claim is made; the next implementation stage is full-custom layout followed by DRC/LVS and extracted/post-layout verification.</p>
         <ul class="tags"><li>IHP SG13G2</li><li>SiGe BiCMOS</li><li>28 GHz PA</li><li>Qucs-S</li><li>ngspice/Xyce</li><li>S-Parameters</li><li>Impedance Matching</li><li>Stability</li><li>KLayout</li><li>EM-Aware Design</li></ul>
       </div>
@@ -79,15 +83,23 @@
         <article class="card support-card complementary-card">
           <div class="status-row"><span class="badge submitted">Manuscript Submitted</span><span class="badge first">First Author</span></div>
           <h3>Learning-Guided VLSI Floorplanning</h3>
-          <p>Independent research on learning-guided physical design for constraint-rich, outline-aware floorplanning. The work combines graph-based circuit representations with B*-tree simulated annealing, structured legalization and exact feasibility checks so that learned guidance improves search without replacing explicit physical-design constraints.</p>
-          <p>The broader study also examines where direct neural floorplanning succeeds and where discrete structure is still necessary, especially the gap between learning strong global placement geometry and achieving exact local legality. This provides a complementary perspective on ML-assisted EDA: learning is used as a design prior while optimization remains responsible for hard feasibility.</p>
+          <ul class="profile-list">
+            <li>Developing learning-guided physical-design methods for constraint-rich, outline-aware VLSI floorplanning using graph-based circuit representations.</li>
+            <li>Combining learned guidance with B*-tree simulated annealing, structured legalization and exact feasibility checks so that ML improves the search while explicit optimization preserves hard physical constraints.</li>
+            <li>Investigating the neural-legality gap: learned models can capture strong global placement geometry, but exact local non-overlap and discrete feasibility still require structured optimization.</li>
+            <li>The broader goal is to understand where learning should guide physical-design search and where combinatorial reasoning remains necessary.</li>
+          </ul>
           <ul class="tags"><li>Physical Design</li><li>Graph Neural Networks</li><li>B*-Tree</li><li>Simulated Annealing</li><li>Constraint Handling</li><li>Optimization</li></ul>
         </article>
         <article class="card support-card complementary-card">
           <div class="status-row"><span class="badge">Ongoing Research</span></div>
           <h3>Leakage-Aware RTL-to-QoR Prediction</h3>
-          <p>Research collaboration on predicting mapped area and pre-layout timing from RTL before full synthesis and timing analysis. The workflow emphasizes source provenance, duplicate and near-duplicate control and component-aware grouping so model evaluation better reflects generalization to genuinely different RTL designs.</p>
-          <p>The current direction studies structural-complexity regimes, size-aware prediction, explainability and coverage awareness using RTL-derived features with Yosys and OpenSTA-based flows. The goal is not only to produce early QoR estimates, but also to understand when those estimates are trustworthy and which RTL structures are driving them.</p>
+          <ul class="profile-list">
+            <li>Collaborating on early prediction of mapped area and pre-layout timing directly from RTL, before full mapping and timing-analysis workflows are complete.</li>
+            <li>Building source-aware evaluation around provenance tracking, duplicate and near-duplicate control and component-aware grouping to reduce leakage and better measure generalization to genuinely different RTL designs.</li>
+            <li>Studying structural-complexity regimes, size-aware prediction, explainability and coverage awareness using RTL-derived features with Yosys and OpenSTA-based flows.</li>
+            <li>The research aims not only to predict QoR early, but also to identify when a prediction is trustworthy and which RTL structures are driving it.</li>
+          </ul>
           <ul class="tags"><li>RTL</li><li>QoR Prediction</li><li>Yosys</li><li>OpenSTA</li><li>Leakage-Aware Evaluation</li><li>Explainability</li></ul>
         </article>
       </div>
