@@ -8,17 +8,18 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=2" />
+  <link rel="stylesheet" href="style.css?v=3" />
   <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
+  <link rel="canonical" href="https://aryanaditta.github.io/eda-academic/research.html" />
 </head>
 <body>
-  <div class="focus-bar">Research portfolio · Updated October 2026</div>
+  <div class="focus-bar">Prospective Graduate Researcher · Fall 2027</div>
   <header class="site-header">
     <div class="wrap header-row">
       <a class="brand" href="index.html" aria-label="Arian Rahman Aditta home">ARA</a>
       <nav aria-label="Primary navigation">
         <a href="index.html">Home</a>
-        <a href="research.html" class="active">Research</a>
+        <a href="research.html" class="active" aria-current="page">Research</a>
         <a href="publications.html">Publications</a>
         <a href="projects.html">Projects</a>
         <a href="profile.html">Education</a>
@@ -36,14 +37,15 @@
     <article class="research-card" id="floorplanning">
       <div class="research-visual">
         <a href="https://raw.githubusercontent.com/AryanAditta/AryanAditta/main/assets/research/gnn-sable-overview.png" target="_blank" rel="noopener" aria-label="Open floorplanning research overview image">
-          <img src="https://raw.githubusercontent.com/AryanAditta/AryanAditta/main/assets/research/gnn-sable-overview.png" alt="Overview of learning-guided VLSI floorplanning research" />
+          <img src="https://raw.githubusercontent.com/AryanAditta/AryanAditta/main/assets/research/gnn-sable-overview.png" alt="Overview of learning-guided VLSI floorplanning research" loading="lazy" />
         </a>
-        <span>Click image to open full overview</span>
+        <span>Open full research overview ↗</span>
       </div>
       <div class="research-copy">
         <div class="status-row"><span class="badge submitted">Manuscript Submitted</span><span class="badge first">First Author</span></div>
         <p class="meta">Physical Design Research · 2026–Present</p>
         <h2>Learning-Guided Constraint-Rich VLSI Floorplanning</h2>
+        <div class="research-question"><strong>Research question:</strong> How much of high-quality constrained floorplanning can be learned directly from circuit structure and where is explicit combinatorial optimization still necessary?</div>
         <p>I investigate how graph-based learning can guide floorplanning under connectivity, geometric and placement constraints while exact legality remains the responsibility of structured optimization.</p>
         <ul>
           <li>The submitted GNN-SABLE work studies learned guidance for B*-tree-based floorplanning and how a learned global prior can assist a classical optimization process.</li>
@@ -59,14 +61,15 @@
     <article class="research-card" id="rtl-qor">
       <div class="research-visual">
         <a href="https://raw.githubusercontent.com/AryanAditta/AryanAditta/main/assets/research/rtl-to-qor-overview.png" target="_blank" rel="noopener" aria-label="Open RTL-to-QoR research overview image">
-          <img src="https://raw.githubusercontent.com/AryanAditta/AryanAditta/main/assets/research/rtl-to-qor-overview.png" alt="Overview of leakage-aware RTL-to-QoR prediction research" />
+          <img src="https://raw.githubusercontent.com/AryanAditta/AryanAditta/main/assets/research/rtl-to-qor-overview.png" alt="Overview of leakage-aware RTL-to-QoR prediction research" loading="lazy" />
         </a>
-        <span>Click image to open full overview</span>
+        <span>Open full research overview ↗</span>
       </div>
       <div class="research-copy">
         <div class="status-row"><span class="badge">Ongoing Research</span></div>
         <p class="meta">Research Collaboration · MSCAD Laboratory, University of Arkansas</p>
         <h2>Leakage-Aware RTL-to-QoR Prediction</h2>
+        <div class="research-question"><strong>Research question:</strong> Can structural information available at RTL support useful early area and timing prediction while evaluation remains source-aware, leakage-resistant and interpretable?</div>
         <p>I am working with Zakia Sultana, Ph.D. Candidate at the MSCAD Laboratory, University of Arkansas, on early estimation of implementation quality directly from RTL before full technology mapping and static timing analysis.</p>
         <ul>
           <li>The work studies how structural information available at RTL can support early area and timing prediction.</li>
@@ -85,13 +88,13 @@
         <h2>Supporting Research</h2>
       </div>
       <div class="grid-2">
-        <article class="card">
+        <article class="card support-card">
           <p class="kicker">Undergraduate Thesis · 2026</p>
           <h3>28 GHz SiGe Power Amplifier Design & Verification</h3>
           <p>Developed a two-stage Class-A SiGe power amplifier using the IHP SG13G2 Open PDK with progressive process-aware and EM-aware realization. Machine learning was used as a supporting design-space exploration tool.</p>
           <ul class="tags"><li>RFIC</li><li>IHP SG13G2</li><li>SiGe BiCMOS</li><li>Open-Source EDA</li></ul>
         </article>
-        <article class="card">
+        <article class="card support-card">
           <p class="kicker">Published · IEEE MARSCON 2026</p>
           <h3>LMatchNet-V: Vendor-Aware RF L-Section Matching</h3>
           <p>Coauthored physics-seeded learning work for RF impedance matching, connecting classical microwave structure with data-driven component selection and safe-library search.</p>
@@ -104,7 +107,7 @@
   <footer class="site-footer">
     <div class="wrap footer-grid">
       <div>
-        <strong>Arian Rahman Aditta</strong>
+        <strong>© 2026 Arian Rahman Aditta</strong>
         <span>VLSI/EDA research · Dhaka, Bangladesh</span>
       </div>
       <div class="footer-links">
