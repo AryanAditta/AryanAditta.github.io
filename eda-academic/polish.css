@@ -37,6 +37,16 @@
   text-transform: uppercase;
 }
 
+.edu-stats .edu-value,
+.edu-stats .percentile {
+  min-height: 0;
+  padding: 0;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
 .edu-value {
   display: block;
   color: #1f2428;
@@ -47,6 +57,7 @@
 }
 
 .edu-value .percentile {
+  display: inline;
   color: #173b52;
   font-weight: 800;
 }
