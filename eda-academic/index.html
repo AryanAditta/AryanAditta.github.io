@@ -8,107 +8,123 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=1" />
+  <link rel="stylesheet" href="style.css?v=2" />
   <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
   <link rel="canonical" href="https://aryanaditta.github.io/eda-academic/" />
 </head>
 <body>
-  <div class="focus-bar">VLSI/EDA · Physical Design · RTL-to-QoR Prediction · ML for Design Automation</div>
+  <div class="focus-bar">Research portfolio · Updated October 2026</div>
   <header class="site-header">
     <div class="wrap header-row">
-      <a class="name" href="index.html">Arian Rahman Aditta</a>
+      <a class="brand" href="index.html" aria-label="Arian Rahman Aditta home">ARA</a>
       <nav aria-label="Primary navigation">
         <a href="index.html" class="active">Home</a>
         <a href="research.html">Research</a>
         <a href="publications.html">Publications</a>
         <a href="projects.html">Projects</a>
-        <a href="profile.html">Profile</a>
-        <a href="https://scholar.google.com/citations?user=Id4ByyUAAAAJ&hl=en" target="_blank" rel="noopener">Scholar</a>
-        <a href="https://www.linkedin.com/in/arian-rahman-aditta/" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="https://github.com/AryanAditta" target="_blank" rel="noopener">GitHub</a>
+        <a href="profile.html">Education</a>
       </nav>
     </div>
   </header>
 
   <main class="wrap">
     <section class="hero">
-      <img src="https://raw.githubusercontent.com/AryanAditta/AryanAditta/main/profile.jpg" alt="Portrait of Arian Rahman Aditta" width="180" height="180" />
+      <img src="https://raw.githubusercontent.com/AryanAditta/AryanAditta/main/profile.jpg" alt="Portrait of Arian Rahman Aditta" width="188" height="188" />
       <div>
-        <p class="kicker">Electronics & Communication Engineering · KUET</p>
+        <p class="kicker">ECE Graduate · KUET</p>
         <h1>Arian Rahman Aditta</h1>
-        <p class="role">VLSI/EDA · Learning-Guided Physical Design · RTL-to-QoR Prediction</p>
-        <p>I am an Electronics and Communication Engineering graduate from Khulna University of Engineering & Technology (KUET). My research interests center on VLSI design automation, physical design and machine learning methods that provide useful guidance without obscuring the underlying engineering constraints.</p>
-        <p>My current work spans constraint-rich floorplanning and early RTL-level QoR prediction. Across both directions, I am interested in where learned representations are genuinely useful, where explicit algorithmic reasoning remains necessary and how evaluation can stay reproducible and leakage-aware.</p>
-        <div class="links">
-          <a href="mailto:aryanrahmanaditta@gmail.com">Email</a>
-          <a href="https://scholar.google.com/citations?user=Id4ByyUAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>
-          <a href="https://www.linkedin.com/in/arian-rahman-aditta/" target="_blank" rel="noopener">LinkedIn</a>
-          <a href="https://github.com/AryanAditta" target="_blank" rel="noopener">GitHub</a>
+        <p class="role">Researcher in VLSI Design Automation</p>
+        <p>I am an Electronics and Communication Engineering graduate from Khulna University of Engineering & Technology (KUET). My research focuses on design automation problems where machine learning can provide useful guidance while engineering constraints remain explicit and verifiable.</p>
+        <p>My current work spans learning-guided physical design and early RTL-level quality-of-results prediction, with an emphasis on reproducible evaluation, structured optimization and physically meaningful model behavior.</p>
+        <div class="identity-links" aria-label="Contact and academic profiles">
+          <a href="mailto:aryanrahmanaditta@gmail.com"><span class="contact-icon">✉</span><span>Email</span></a>
+          <a href="https://scholar.google.com/citations?user=Id4ByyUAAAAJ&hl=en" target="_blank" rel="noopener"><span class="contact-icon">🎓</span><span>Google Scholar</span></a>
+          <a href="https://www.linkedin.com/in/arian-rahman-aditta/" target="_blank" rel="noopener"><span class="contact-icon text-icon">in</span><span>LinkedIn</span></a>
+          <a href="https://github.com/AryanAditta" target="_blank" rel="noopener"><span class="contact-icon text-icon">GH</span><span>GitHub</span></a>
         </div>
-        <ul class="tags" aria-label="Research interests">
-          <li>VLSI/EDA</li>
-          <li>Physical Design</li>
-          <li>Floorplanning</li>
-          <li>RTL-to-QoR</li>
-          <li>Graph Learning</li>
-          <li>ML for EDA</li>
-        </ul>
       </div>
     </section>
 
-    <section class="feature">
-      <p class="kicker">Featured Research Direction</p>
-      <h2>Learning-Guided Constraint-Rich VLSI Floorplanning</h2>
-      <p>I study how learned circuit representations can guide floorplanning while exact geometric legality and physical-design constraints remain explicit. My submitted GNN-SABLE work combines learned graph guidance with structured optimization, while ongoing work examines the broader gap between strong global neural geometry and exact local feasibility.</p>
-      <p><a href="research.html">Explore the research →</a></p>
+    <section>
+      <div class="section-head split-head">
+        <div>
+          <p class="kicker">Featured Research Directions</p>
+          <h2>Two Complementary EDA Problems</h2>
+        </div>
+        <a class="section-link" href="research.html">Explore all research →</a>
+      </div>
+      <div class="featured-grid">
+        <article class="feature-card">
+          <div class="feature-visual">
+            <img src="https://raw.githubusercontent.com/AryanAditta/AryanAditta/main/assets/research/gnn-sable-overview.png" alt="Overview of learning-guided VLSI floorplanning research" />
+          </div>
+          <div class="feature-body">
+            <p class="kicker">Physical Design</p>
+            <h3>Learning-Guided Constraint-Rich VLSI Floorplanning</h3>
+            <p>Studying how learned circuit representations can guide floorplanning while exact geometry, legality and optimization remain explicitly handled.</p>
+            <a href="research.html#floorplanning">Explore research →</a>
+          </div>
+        </article>
+        <article class="feature-card">
+          <div class="feature-visual">
+            <img src="https://raw.githubusercontent.com/AryanAditta/AryanAditta/main/assets/research/rtl-to-qor-overview.png" alt="Overview of leakage-aware RTL-to-QoR prediction research" />
+          </div>
+          <div class="feature-body">
+            <p class="kicker">Early Design Prediction</p>
+            <h3>Leakage-Aware RTL-to-QoR Prediction</h3>
+            <p>Investigating early area and timing prediction from RTL with source-aware evaluation, structural modeling, explainability and coverage awareness.</p>
+            <a href="research.html#rtl-qor">Explore research →</a>
+          </div>
+        </article>
+      </div>
     </section>
 
     <section>
-      <h2>Highlights</h2>
-      <p class="highlights"><strong>CGPA 3.71/4.00</strong> · <strong>Class Rank 5/60 (Top 8.3%)</strong> · Dean's Awards in 3rd and 4th Year · 3 peer-reviewed publications · 2 first-author conference manuscripts submitted · President, KUET Research Society, ECE</p>
-    </section>
-
-    <section>
-      <h2>Research Snapshot</h2>
-      <div class="grid-2">
-        <article class="card">
-          <p class="kicker">Physical Design</p>
-          <h3>Learning-Guided Floorplanning</h3>
-          <p>Graph-based guidance for constraint-rich floorplanning, with current work separating representation quality from exact geometric feasibility.</p>
-          <p><a href="research.html#floorplanning">Read more →</a></p>
-        </article>
-        <article class="card">
-          <p class="kicker">Early Design Prediction</p>
-          <h3>RTL-to-QoR Prediction</h3>
-          <p>Leakage-aware early prediction of implementation quality from RTL, with emphasis on source provenance, structural complexity, explainability and coverage awareness.</p>
-          <p><a href="research.html#rtl-qor">Read more →</a></p>
-        </article>
+      <div class="section-head">
+        <p class="kicker">Academic Snapshot</p>
+        <h2>Highlights</h2>
+      </div>
+      <div class="highlight-box">
+        <div class="highlight-item"><strong>3.71 / 4.00</strong><span>CGPA</span></div>
+        <div class="highlight-item"><strong>5 / 60</strong><span>Class Rank · Top 8.3%</span></div>
+        <div class="highlight-item"><strong>3rd & 4th Year</strong><span>Dean's Awards</span></div>
+        <div class="highlight-item"><strong>3</strong><span>Peer-Reviewed Publications</span></div>
+        <div class="highlight-item"><strong>2</strong><span>First-Author Conference Manuscripts Submitted</span></div>
+        <div class="highlight-item"><strong>President</strong><span>KUET Research Society, ECE</span></div>
       </div>
     </section>
 
     <section id="news">
-      <h2>News</h2>
-      <div class="timeline">
-        <div class="timeline-item"><time>Oct 2026</time><p>Submitted the first-author manuscript <em>Graph Neural Network Guidance for B*-Tree Annealing in Constraint-Rich Outline-Aware Floorplanning</em> to ICEEICT 2027.</p></div>
-        <div class="timeline-item"><time>Oct 2026</time><p>Expanded the floorplanning research into controlled studies of learned global geometry, output representation and exact geometric feasibility.</p></div>
-        <div class="timeline-item"><time>Sep 2026</time><p>Submitted the first-author thesis-derived RFIC manuscript to the 29th International Conference on Computer and Information Technology (ICCIT 2026).</p></div>
-        <div class="timeline-item"><time>Sep 2026</time><p>First-author <em>SenseStick</em> work published/presented at IEEE BECITHCON 2026.</p></div>
-        <div class="timeline-item"><time>Aug 2026</time><p><em>LMatchNet-V</em> published/presented at IEEE MARSCON 2026.</p></div>
-        <div class="timeline-item"><time>Aug 2025</time><p>Coauthored Vision Transformer work published in Springer CCIS through GLOW 2025.</p></div>
+      <div class="section-head split-head">
+        <div>
+          <p class="kicker">Recent Activity</p>
+          <h2>News</h2>
+        </div>
+        <a class="section-link" href="publications.html">View publications →</a>
       </div>
-    </section>
-
-    <section class="contact-box">
-      <h2>Contact</h2>
-      <p>I am interested in research discussions and graduate opportunities in VLSI/EDA, physical design, RTL analysis and learning-guided design automation.</p>
-      <p><a href="mailto:aryanrahmanaditta@gmail.com">aryanrahmanaditta@gmail.com</a></p>
+      <div class="news-box">
+        <div class="timeline-item"><span class="timeline-dot" aria-hidden="true"></span><time>Oct 2026</time><p>Submitted the first-author manuscript <em>Graph Neural Network Guidance for B*-Tree Annealing in Constraint-Rich Outline-Aware Floorplanning</em> to ICEEICT 2027.</p></div>
+        <div class="timeline-item"><span class="timeline-dot" aria-hidden="true"></span><time>Oct 2026</time><p>Expanded the floorplanning research into controlled studies of learned global geometry, output representation and exact geometric feasibility.</p></div>
+        <div class="timeline-item"><span class="timeline-dot" aria-hidden="true"></span><time>Sep 2026</time><p>Submitted the first-author thesis-derived RFIC manuscript to the 29th International Conference on Computer and Information Technology (ICCIT 2026).</p></div>
+        <div class="timeline-item"><span class="timeline-dot" aria-hidden="true"></span><time>Sep 2026</time><p>First-author <em>SenseStick</em> work published/presented at IEEE BECITHCON 2026.</p></div>
+        <div class="timeline-item"><span class="timeline-dot" aria-hidden="true"></span><time>Aug 2026</time><p><em>LMatchNet-V</em> published/presented at IEEE MARSCON 2026.</p></div>
+        <div class="timeline-item"><span class="timeline-dot" aria-hidden="true"></span><time>Aug 2025</time><p>Coauthored Vision Transformer work published in Springer CCIS through GLOW 2025.</p></div>
+      </div>
     </section>
   </main>
 
-  <footer>
-    <div class="wrap footer-row">
-      <span>© 2026 Arian Rahman Aditta</span>
-      <span>Dhaka, Bangladesh · <a href="mailto:aryanrahmanaditta@gmail.com">Email</a></span>
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div>
+        <strong>Arian Rahman Aditta</strong>
+        <span>VLSI/EDA research · Dhaka, Bangladesh</span>
+      </div>
+      <div class="footer-links">
+        <a href="mailto:aryanrahmanaditta@gmail.com">✉ Email</a>
+        <a href="https://scholar.google.com/citations?user=Id4ByyUAAAAJ&hl=en" target="_blank" rel="noopener">🎓 Scholar</a>
+        <a href="https://www.linkedin.com/in/arian-rahman-aditta/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/AryanAditta" target="_blank" rel="noopener">GitHub</a>
+      </div>
     </div>
   </footer>
 </body>
