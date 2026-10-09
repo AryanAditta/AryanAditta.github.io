@@ -1,28 +1,20 @@
-# Academic Website Repository
+# Academic Web Portfolio
 
-Source repository for the academic websites and research-profile pages of **Arian Rahman Aditta**.
+Source repository for the academic and research web portfolio of **Arian Rahman Aditta**.
 
-## Public Profiles
+The portfolio presents work across two complementary hardware-design directions:
 
-- **RFIC Academic Profile:** https://aryanaditta.github.io/rfic-academic/
-- **EDA Academic Profile:** https://aryanaditta.github.io/eda-academic/
-- **Teaching / Academic Profile:** https://aryanaditta.github.io/academic-profile/
+- **RF/mmWave IC Design** — analog/RF IC design, SiGe BiCMOS circuits, power amplifiers, impedance matching, stability, process-aware and EM-aware realization and RFIC design automation.
+- **VLSI / EDA** — physical-design automation, constraint-rich floorplanning, learning-guided optimization, RTL-to-QoR prediction and ML/GNN methods for EDA.
 
-## Repository Structure
+## Repository Contents
 
-- `rfic-academic/` — professor-facing RF/mmWave IC and analog/RF IC research profile.
-- `eda-academic/` — professor-facing VLSI/EDA, physical-design and RTL-to-QoR research profile.
-- `academic-profile/` — broader academic/teaching profile.
-- `eda/` — earlier EDA-focused site.
-- root files — legacy/general website assets and shared resources.
+This repository contains the web assets, research figures, publication information, project summaries and academic-profile pages used across the portfolio.
 
-## Research Identity
+The public-facing material is intentionally organized by research context so that individual pages can remain focused while the underlying portfolio reflects the broader research background.
 
-My current research spans two closely related hardware-design tracks:
+## Research Profile
 
-- **RF/mmWave IC Design:** analog/RF IC design, SiGe BiCMOS, power amplifiers, process-aware and EM-aware realization and RFIC design automation.
-- **VLSI / EDA:** learning-guided physical design, constraint-rich floorplanning, RTL-to-QoR prediction and ML/GNN for EDA.
-
-For research details, publications and current project summaries, use the dedicated academic profiles above.
+My broader interest is in **hardware design and design automation**, particularly problems where circuit or physical-design understanding can be combined with computational methods to improve implementation quality, efficiency and reliability.
 
 [GitHub Profile](https://github.com/AryanAditta) · [Google Scholar](https://scholar.google.com/citations?user=Id4ByyUAAAAJ&hl=en) · [LinkedIn](https://www.linkedin.com/in/arian-rahman-aditta/)
