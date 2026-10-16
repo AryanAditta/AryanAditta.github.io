@@ -13,6 +13,13 @@
     write(ownerKey, location.hash.endsWith('-on') ? '1' : '0');
     history.replaceState(null, '', location.pathname + location.search);
   }
+  window.addEventListener('hashchange', () => {
+    if (location.hash === '#analytics-owner-on' || location.hash === '#analytics-owner-off') {
+      write(ownerKey, location.hash.endsWith('-on') ? '1' : '0');
+      history.replaceState(null, '', location.pathname + location.search);
+      location.reload();
+    }
+  });
   let started = false;
   const isOwner = () => read(ownerKey) === '1';
   function cleanLocation() {
