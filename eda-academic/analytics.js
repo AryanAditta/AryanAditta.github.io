@@ -41,6 +41,22 @@
     return url.href;
   }
 
+  // Capture attribution first, then remove campaign parameters from the visible URL.
+  const analyticsPageLocation = cleanLocation();
+  function hideTrackingParams() {
+    const url = new URL(location.href);
+    let changed = false;
+    for (const key of ['utm_source','utm_medium','utm_campaign','utm_content']) {
+      if (url.searchParams.has(key)) {
+        url.searchParams.delete(key);
+        changed = true;
+      }
+    }
+    if (changed) {
+      history.replaceState(history.state, '', url.pathname + url.search + url.hash);
+    }
+  }
+
   function start() {
     if (started || isOwner() || location.hostname !== 'aryanaditta.github.io') return;
     started = true;
@@ -66,7 +82,7 @@
       cookie_prefix: 'academic_' + siteTrack.toLowerCase(),
       cookie_path: basePath,
       cookie_flags: 'SameSite=Lax;Secure',
-      page_location: cleanLocation(),
+      page_location: analyticsPageLocation,
       page_referrer: document.referrer ? new URL(document.referrer).origin : '',
       allow_google_signals: false,
       allow_ad_personalization_signals: false
@@ -162,5 +178,6 @@
     choice();
   });
 
+  hideTrackingParams();
   start();
 })();
