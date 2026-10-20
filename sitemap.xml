@@ -1,13 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://aryanaditta.github.io/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
+    <loc>https://aryanaditta.github.io/rfic-academic/</loc>
   </url>
   <url>
-    <loc>https://aryanaditta.github.io/eda/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <loc>https://aryanaditta.github.io/rfic-academic/research.html</loc>
+  </url>
+  <url>
+    <loc>https://aryanaditta.github.io/rfic-academic/publications.html</loc>
+  </url>
+  <url>
+    <loc>https://aryanaditta.github.io/rfic-academic/projects.html</loc>
+  </url>
+  <url>
+    <loc>https://aryanaditta.github.io/rfic-academic/profile.html</loc>
+  </url>
+  <url>
+    <loc>https://aryanaditta.github.io/eda-academic/</loc>
+  </url>
+  <url>
+    <loc>https://aryanaditta.github.io/eda-academic/research.html</loc>
+  </url>
+  <url>
+    <loc>https://aryanaditta.github.io/eda-academic/publications.html</loc>
+  </url>
+  <url>
+    <loc>https://aryanaditta.github.io/eda-academic/projects.html</loc>
+  </url>
+  <url>
+    <loc>https://aryanaditta.github.io/eda-academic/profile.html</loc>
   </url>
 </urlset>
