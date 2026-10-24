@@ -3,123 +3,64 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Research · Arian Rahman Aditta</title>
-  <meta name="description" content="Research by Arian Rahman Aditta in learning-guided VLSI floorplanning, RTL-to-QoR prediction and machine learning for EDA." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <title>VLSI/EDA Research · Arian Rahman Aditta</title>
+  <meta name="description" content="VLSI/EDA research by Arian Rahman Aditta in learning-guided physical design, prospective RTL area/timing prediction and reproducible machine-learning evaluation." />
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=3" />
-  <link rel="stylesheet" href="polish.css?v=2" />
-  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
-  <link rel="canonical" href="https://aryanaditta.github.io/eda-academic/research.html" />
+  <link rel="stylesheet" href="style.css?v=3" /><link rel="stylesheet" href="polish.css?v=2" />
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" /><link rel="canonical" href="https://aryanaditta.github.io/eda-academic/research.html" />
   <script defer src="analytics.js?v=1"></script>
 </head>
 <body>
   <div class="focus-bar">Prospective Graduate Researcher · Fall 2027</div>
-  <header class="site-header">
-    <div class="wrap header-row">
-      <a class="brand" href="index.html" aria-label="Arian Rahman Aditta home">ARA</a>
-      <nav aria-label="Primary navigation">
-        <a href="index.html">Home</a>
-        <a href="research.html" class="active" aria-current="page">Research</a>
-        <a href="publications.html">Publications</a>
-        <a href="projects.html">Projects</a>
-        <a href="profile.html">Education</a>
-      </nav>
-    </div>
-  </header>
+  <header class="site-header"><div class="wrap header-row"><a class="brand" href="index.html" aria-label="Arian Rahman Aditta home">ARA</a><nav aria-label="Primary navigation"><a href="index.html">Home</a><a href="research.html" class="active" aria-current="page">Research</a><a href="publications.html">Publications</a><a href="projects.html">Projects</a><a href="profile.html">Education</a></nav></div></header>
 
   <main class="wrap">
-    <div class="page-intro">
-      <p class="kicker">Research</p>
-      <h1>Learning-Guided Design Automation</h1>
-      <p class="section-intro">My EDA research asks a common question across different design stages: what should be learned from data and what should remain explicitly enforced by algorithms, constraints or physical-design reasoning?</p>
-    </div>
+    <div class="page-intro"><p class="kicker">Research</p><h1>Learning-Guided & Reproducible Design Automation</h1><p class="section-intro">My EDA research asks two linked questions: how learning can improve difficult design decisions and how evaluation can remain source-aware, physically grounded and reproducible.</p></div>
 
     <article class="research-card" id="floorplanning">
-      <div class="research-visual">
-        <a href="https://raw.githubusercontent.com/AryanAditta/AryanAditta/main/assets/research/gnn-sable-overview.png" target="_blank" rel="noopener" aria-label="Open floorplanning research overview image">
-          <img src="https://raw.githubusercontent.com/AryanAditta/AryanAditta/main/assets/research/gnn-sable-overview.png" alt="Overview of learning-guided VLSI floorplanning research" loading="lazy" />
-        </a>
-        <span>Open full research overview ↗</span>
-      </div>
-      <div class="research-copy">
-        <div class="status-row"><span class="badge submitted">Manuscript Submitted</span><span class="badge first">First Author</span></div>
-        <p class="meta">Physical Design Research · 2026–Present</p>
-        <h2>Learning-Guided Constraint-Rich VLSI Floorplanning</h2>
-        <div class="research-question"><strong>Research question:</strong> How much of high-quality constrained floorplanning can be learned directly from circuit structure and where is explicit combinatorial optimization still necessary?</div>
-        <p>I investigate how graph-based learning can guide floorplanning under connectivity, geometric and placement constraints while exact legality remains the responsibility of structured optimization.</p>
-        <ul>
-          <li>The submitted GNN-SABLE work studies learned guidance for B*-tree-based floorplanning and how a learned global prior can assist a classical optimization process.</li>
-          <li>Ongoing experiments examine the neural-legality gap: models can recover useful global geometry while exact local packing remains substantially harder.</li>
-          <li>Current controlled studies separate encoder quality from output representation to identify where the remaining feasibility limitation actually lies.</li>
-        </ul>
-        <ul class="tags">
-          <li>VLSI Physical Design</li><li>Floorplanning</li><li>Graph Neural Networks</li><li>B*-Tree</li><li>Combinatorial Optimization</li>
-        </ul>
-      </div>
+      <div class="research-visual"><a href="https://raw.githubusercontent.com/AryanAditta/AryanAditta/main/assets/research/gnn-sable-overview.png" target="_blank" rel="noopener"><img src="https://raw.githubusercontent.com/AryanAditta/AryanAditta/main/assets/research/gnn-sable-overview.png" alt="Overview of learning-guided VLSI floorplanning research" loading="lazy" /></a><span>Open full research overview ↗</span></div>
+      <div class="research-copy"><div class="status-row"><span class="badge submitted">Manuscript Submitted</span><span class="badge first">First Author</span></div><p class="meta">Physical Design Research · 2026–Present</p><h2>Learning-Guided Constraint-Rich VLSI Floorplanning</h2><div class="research-question"><strong>Research question:</strong> How much of high-quality constrained floorplanning can be learned from circuit structure and where is explicit combinatorial optimization still necessary?</div><p>I investigate graph-based guidance for floorplanning under connectivity, geometry and placement constraints while exact legality remains the responsibility of structured optimization.</p><ul><li>The submitted GNN-SABLE work combines graph-based guidance with B*-tree annealing, structured legalization and exact feasibility handling.</li><li>Ongoing controlled studies examine the neural-legality gap and separate representation quality from output/feasibility limitations.</li></ul><ul class="tags"><li>VLSI Physical Design</li><li>Floorplanning</li><li>Graph Neural Networks</li><li>B*-Tree</li><li>Combinatorial Optimization</li></ul></div>
     </article>
 
     <article class="research-card" id="rtl-qor">
-      <div class="research-visual">
-        <a href="https://raw.githubusercontent.com/AryanAditta/AryanAditta/main/assets/research/rtl-to-qor-overview.png" target="_blank" rel="noopener" aria-label="Open RTL-to-QoR research overview image">
-          <img src="https://raw.githubusercontent.com/AryanAditta/AryanAditta/main/assets/research/rtl-to-qor-overview.png" alt="Overview of leakage-aware RTL-to-QoR prediction research" loading="lazy" />
-        </a>
-        <span>Open full research overview ↗</span>
-      </div>
+      <div class="research-visual"><a href="https://raw.githubusercontent.com/AryanAditta/AryanAditta/main/assets/research/rtl-to-qor-overview.png" target="_blank" rel="noopener"><img src="https://raw.githubusercontent.com/AryanAditta/AryanAditta/main/assets/research/rtl-to-qor-overview.png" alt="Overview of source-aware RTL area and timing prediction research" loading="lazy" /></a><span>Open full research overview ↗</span></div>
       <div class="research-copy">
-        <div class="status-row"><span class="badge">Ongoing Research</span></div>
-        <p class="meta">Research Collaboration · MSCAD Laboratory, University of Arkansas</p>
-        <h2>Leakage-Aware RTL-to-QoR Prediction</h2>
-        <div class="research-question"><strong>Research question:</strong> Can structural information available at RTL support useful early area and timing prediction while evaluation remains source-aware, leakage-resistant and interpretable?</div>
-        <p>I am working with Zakia Sultana, Ph.D. Candidate at the MSCAD Laboratory, University of Arkansas, on early estimation of implementation quality directly from RTL before full technology mapping and static timing analysis.</p>
+        <div class="status-row"><span class="badge">Manuscript in Preparation</span></div>
+        <p class="meta">Preparing for <em>Integration, the VLSI Journal</em> · Public Reproducibility Package</p>
+        <h2>Source-Aware Evaluation of RTL Area and Timing Prediction with Prospective Confirmation</h2>
+        <div class="research-question"><strong>Research question:</strong> Can early RTL area and timing predictors be evaluated in a way that prevents source leakage, preserves information chronology and confirms improvements on labels that did not exist when the predictions were frozen?</div>
         <ul>
-          <li>The work studies how structural information available at RTL can support early area and timing prediction.</li>
-          <li>The data pipeline emphasizes source provenance, duplicate-aware grouping and leakage-aware evaluation so model performance reflects genuinely unseen source families.</li>
-          <li>Current research examines structural-complexity effects, explainability and coverage awareness so estimates can be interpreted with appropriate engineering caution.</li>
+          <li>Evaluates mapped standard-cell area and standardized pre-layout minimum feasible clock period under one pinned open-source Yosys/ABC, OpenSTA and Nangate45 flow.</li>
+          <li>The development corpus contains 681 labelled configurations grouped into 498 source-connected components so related RTL sources do not cross evaluation folds.</li>
+          <li>On 39 paired fresh Area designs, the frozen Area system reduced MAE from 8,382 to 3,015 µm² and the primary macro log loss by 58.9% relative to its frozen native reference.</li>
+          <li>On 39 paired fresh Timing designs, TimingV2 reduced MAE from 0.167 to 0.136 ns and the primary loss by 17.5%; the manuscript explicitly reports that this timing gain is more metric-sensitive than the Area result.</li>
+          <li>The public package releases frozen predictions, labels, protocol records, result tables and scripts while preserving the stated limits on arbitrary-RTL support, post-layout/signoff accuracy and cross-technology transfer.</li>
         </ul>
-        <ul class="tags">
-          <li>RTL</li><li>QoR Prediction</li><li>Yosys</li><li>OpenSTA</li><li>ML for EDA</li><li>Explainability</li>
-        </ul>
+        <p class="meta"><a href="https://github.com/AryanAditta/rtl-qor-source-aware-evaluation" target="_blank" rel="noopener">GitHub reproducibility package ↗</a> · <a href="https://doi.org/10.5281/zenodo.23489958" target="_blank" rel="noopener">Zenodo archive ↗</a></p>
+        <ul class="tags"><li>RTL</li><li>Area Prediction</li><li>Timing Prediction</li><li>Yosys/ABC</li><li>OpenSTA</li><li>Source Grouping</li><li>Prospective Evaluation</li><li>Reproducibility</li></ul>
       </div>
     </article>
 
-    <section>
-      <div class="section-head">
-        <p class="kicker">Broader Hardware Background</p>
-        <h2>Supporting Research</h2>
-      </div>
-      <div class="grid-2">
-        <article class="card support-card">
-          <p class="kicker">Undergraduate Thesis · 2026</p>
-          <h3>28 GHz SiGe Power Amplifier Design & Verification</h3>
-          <p>Developed a two-stage Class-A SiGe power amplifier using the IHP SG13G2 Open PDK with progressive process-aware and EM-aware realization. Machine learning was used as a supporting design-space exploration tool.</p>
-          <ul class="tags"><li>RFIC</li><li>IHP SG13G2</li><li>SiGe BiCMOS</li><li>Open-Source EDA</li></ul>
-        </article>
-        <article class="card support-card">
-          <p class="kicker">Published · IEEE MARSCON 2026</p>
-          <h3>LMatchNet-V: Vendor-Aware RF L-Section Matching</h3>
-          <p>Coauthored physics-seeded learning work for RF impedance matching, connecting classical microwave structure with data-driven component selection and safe-library search.</p>
-          <ul class="tags"><li>RF Matching</li><li>Physics-Seeded Learning</li><li>Design Automation</li></ul>
-        </article>
-      </div>
+    <section id="enhancer-audit">
+      <div class="section-head"><p class="kicker">Broader ML Evaluation Research</p><h2>Enhancer Benchmark Audit & Model Evaluation</h2></div>
+      <article class="card support-card">
+        <div class="status-row"><span class="badge submitted">Submitted to BMC Bioinformatics</span><span class="badge first">First Author</span></div>
+        <h3>Benchmark audit and model evaluation for enhancer prediction: data overlap, training adequacy and assay transfer</h3>
+        <p>This study focuses on evaluation validity rather than proposing a new prediction architecture. It audits benchmark independence, re-evaluates enhancer classification with similarity grouping and composition matching, and separately studies quantitative lentiMPRA activity prediction and external assay transfer.</p>
+        <ul class="profile-list support-points">
+          <li>Identified 100 strong historical test records identical to training records in supplied copies of both legacy enhancer-classification tasks.</li>
+          <li>Separates single-seed and ensemble conclusions for DNABERT/DNABERT-2 and tests training-duration effects rather than treating architecture alone as the explanation.</li>
+          <li>Evaluates DNABERT-2, LegNet and MPRAnn on measured reporter activity and shows that positive external ranking can coexist with poor absolute calibration under assay shift.</li>
+        </ul>
+        <p class="meta"><a href="https://github.com/AryanAditta/enhancer-benchmark-audit" target="_blank" rel="noopener">GitHub reproducibility repository ↗</a> · <a href="https://doi.org/10.5281/zenodo.23503625" target="_blank" rel="noopener">Zenodo v1.0.0 ↗</a></p>
+        <ul class="tags"><li>Benchmark Audit</li><li>Data Leakage</li><li>DNABERT-2</li><li>MPRA</li><li>Grouped Evaluation</li><li>Reproducibility</li></ul>
+      </article>
     </section>
+
+    <section><div class="section-head"><p class="kicker">Broader Hardware Background</p><h2>Supporting Research</h2></div><div class="grid-2"><article class="card support-card"><p class="kicker">Undergraduate Thesis · 2026</p><h3>28 GHz SiGe Power Amplifier Design & Verification</h3><p>Developed a two-stage Class-A SiGe power amplifier using the IHP SG13G2 Open PDK with progressive process-aware and EM-aware realization. Machine learning was used as a supporting design-space exploration tool.</p><ul class="tags"><li>RFIC</li><li>IHP SG13G2</li><li>SiGe BiCMOS</li><li>Open-Source EDA</li></ul></article><article class="card support-card"><p class="kicker">Published · IEEE MARSCON 2026</p><h3>LMatchNet-V: Vendor-Aware RF L-Section Matching</h3><p>Coauthored physics-seeded learning work for RF impedance matching, connecting classical microwave structure with data-driven component selection and safe-library search.</p><ul class="tags"><li>RF Matching</li><li>Physics-Seeded Learning</li><li>Design Automation</li></ul></article></div></section>
   </main>
 
-  <footer class="site-footer">
-    <div class="wrap footer-grid">
-      <div>
-        <strong>© 2026 Arian Rahman Aditta</strong>
-        <span>VLSI/EDA research · Dhaka, Bangladesh</span>
-      </div>
-      <div class="footer-links">
-        <a href="mailto:aryanrahmanaditta@gmail.com">✉ Email</a>
-        <a href="https://scholar.google.com/citations?user=Id4ByyUAAAAJ&hl=en" target="_blank" rel="noopener">🎓 Scholar</a>
-        <a href="https://www.linkedin.com/in/arian-rahman-aditta/" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="https://github.com/AryanAditta" target="_blank" rel="noopener">GitHub</a>
-      </div>
-    </div>
-    <p class="wrap" style="font-size:12px;padding-bottom:12px"><a href="privacy.html">Privacy</a> · <a href="privacy.html" data-analytics-settings>Analytics choices</a></p>
-  </footer>
+  <footer class="site-footer"><div class="wrap footer-grid"><div><strong>© 2026 Arian Rahman Aditta</strong><span>VLSI/EDA research · Dhaka, Bangladesh</span></div><div class="footer-links"><a href="mailto:aryanrahmanaditta@gmail.com">✉ Email</a><a href="https://scholar.google.com/citations?user=Id4ByyUAAAAJ&hl=en" target="_blank" rel="noopener">🎓 Scholar</a><a href="https://www.linkedin.com/in/arian-rahman-aditta/" target="_blank" rel="noopener">LinkedIn</a><a href="https://github.com/AryanAditta" target="_blank" rel="noopener">GitHub</a></div></div><p class="wrap" style="font-size:12px;padding-bottom:12px"><a href="privacy.html">Privacy</a> · <a href="privacy.html" data-analytics-settings>Analytics choices</a></p></footer>
 </body>
 </html>
