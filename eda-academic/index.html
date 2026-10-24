@@ -5,9 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Arian Rahman Aditta · VLSI/EDA Research</title>
   <meta name="description" content="Academic research homepage of Arian Rahman Aditta focused on VLSI/EDA, learning-guided physical design, source-aware RTL area/timing prediction and reproducible design automation." />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Arian Rahman Aditta · VLSI/EDA Research" />
+  <meta property="og:description" content="Learning-guided physical design and source-aware RTL area/timing prediction with prospective confirmation and public reproducibility packages." />
+  <meta property="og:url" content="https://aryanaditta.github.io/eda-academic/" />
+  <meta property="og:image" content="https://raw.githubusercontent.com/AryanAditta/AryanAditta/main/profile.jpg" />
   <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=3" /><link rel="stylesheet" href="polish.css?v=3" />
+  <link rel="stylesheet" href="style.css?v=3" /><link rel="stylesheet" href="polish.css?v=5" />
   <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" /><link rel="canonical" href="https://aryanaditta.github.io/eda-academic/" />
   <script defer src="analytics.js?v=1"></script>
 </head>
@@ -21,11 +26,22 @@
       <div><p class="kicker">ECE Graduate · KUET</p><h1>Arian Rahman Aditta</h1><p class="role">VLSI/EDA · Physical Design · RTL Area & Timing Prediction</p><p>I am an Electronics and Communication Engineering graduate from Khulna University of Engineering & Technology (KUET). My research focuses on design-automation problems where learning can guide difficult decisions while constraints, information chronology and physical evaluation remain explicit.</p><p>My current work spans learning-guided VLSI floorplanning and source-aware RTL area/timing prediction with prospective confirmation under reproducible open-source flows.</p><div class="identity-links" aria-label="Contact and academic profiles"><a href="mailto:aryanrahmanaditta@gmail.com"><span class="contact-icon">✉</span><span>Email</span></a><a href="Arian_Rahman_Aditta_EDA_CV.pdf" target="_blank" rel="noopener"><span class="contact-icon">📄</span><span>CV</span></a><a href="https://scholar.google.com/citations?user=Id4ByyUAAAAJ&hl=en" target="_blank" rel="noopener"><span class="contact-icon">🎓</span><span>Google Scholar</span></a><a href="https://www.linkedin.com/in/arian-rahman-aditta/" target="_blank" rel="noopener"><span class="contact-icon text-icon">in</span><span>LinkedIn</span></a><a href="https://github.com/AryanAditta" target="_blank" rel="noopener"><span class="contact-icon text-icon">GH</span><span>GitHub</span></a></div></div>
     </section>
 
+    <section class="technical-signal" aria-labelledby="technical-signal-title">
+      <div class="signal-heading"><p class="kicker">Technical Signal</p><h2 id="technical-signal-title">Current EDA Evidence at a Glance</h2></div>
+      <div class="signal-grid">
+        <div class="signal-item"><span class="signal-value">681 / 498</span><span class="signal-label">Labelled RTL configurations / source-connected components</span></div>
+        <div class="signal-item"><span class="signal-value">8,382 → 3,015 µm²</span><span class="signal-label">Fresh Area MAE · 39 paired designs</span></div>
+        <div class="signal-item"><span class="signal-value">0.167 → 0.136 ns</span><span class="signal-label">Fresh Timing MAE · 39 paired designs</span></div>
+        <div class="signal-item"><span class="signal-value">Yosys · ABC · OpenSTA</span><span class="signal-label">Pinned Nangate45 physical-label flow</span></div>
+      </div>
+      <p class="signal-caption"><strong>Prospective confirmation:</strong> candidate predictions were frozen before the corresponding fresh physical labels were generated. Public prediction-level evidence and scripts are available on GitHub and Zenodo.</p>
+    </section>
+
     <section>
       <div class="section-head split-head"><div><p class="kicker">Featured Research Directions</p><h2>Physical Design & Early QoR Prediction</h2></div><a class="section-link" href="research.html">Explore all research →</a></div>
       <div class="featured-grid">
         <article class="feature-card"><div class="feature-visual"><img src="https://raw.githubusercontent.com/AryanAditta/AryanAditta/main/assets/research/gnn-sable-overview.png" alt="Overview of learning-guided VLSI floorplanning research" loading="lazy" /></div><div class="feature-body"><div class="status-row compact-status"><span class="badge submitted">Submitted</span><span class="badge first">First Author</span></div><p class="kicker">Physical Design</p><h3>Learning-Guided Constraint-Rich VLSI Floorplanning</h3><p>Graph-based guidance for floorplanning while exact geometry, legality and structured optimization remain explicit.</p><a href="research.html#floorplanning">Explore research →</a></div></article>
-        <article class="feature-card"><div class="feature-visual"><img src="https://raw.githubusercontent.com/AryanAditta/AryanAditta/main/assets/research/rtl-to-qor-overview.png" alt="Overview of source-aware RTL area and timing prediction research" loading="lazy" /></div><div class="feature-body"><div class="status-row compact-status"><span class="badge">Manuscript in Preparation</span></div><p class="kicker">Early Design Prediction</p><h3>Source-Aware RTL Area & Timing Prediction</h3><p>Prospective confirmation of mapped-area and pre-layout Tmin prediction under a source-aware Yosys/ABC/OpenSTA Nangate45 flow, with frozen predictions before fresh labels are generated.</p><a href="research.html#rtl-qor">Explore research →</a></div></article>
+        <article class="feature-card"><div class="feature-visual"><img src="https://raw.githubusercontent.com/AryanAditta/AryanAditta/main/assets/research/rtl-to-qor-overview.png" alt="Overview of source-aware RTL area and timing prediction research" loading="lazy" /></div><div class="feature-body"><div class="status-row compact-status"><span class="badge">Manuscript in Preparation</span></div><p class="kicker">Early Design Prediction</p><h3>Source-Aware RTL Area & Timing Prediction</h3><p>Prospective confirmation of mapped-area and pre-layout Tmin prediction under a source-aware Yosys/ABC/OpenSTA Nangate45 flow, with frozen predictions before fresh labels are generated.</p><div class="feature-actions"><a href="research.html#rtl-qor">Research details →</a><a href="https://github.com/AryanAditta/rtl-qor-source-aware-evaluation" target="_blank" rel="noopener">Reproducibility ↗</a></div></div></article>
       </div>
     </section>
 
