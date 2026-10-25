@@ -4,12 +4,12 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>RF/mmWave IC Research · Arian Rahman Aditta</title>
-  <meta name="description" content="RF/mmWave IC research by Arian Rahman Aditta in SiGe power amplifiers, RF front-end design-space generation, EM-aware realization and RF design automation." />
+  <meta name="description" content="RF/mmWave IC research by Arian Rahman Aditta in SiGe power amplifiers, PA/LNA front-end design, noise and matching analysis, EM-aware realization and full-custom layout progression." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css?v=1" />
-  <link rel="stylesheet" href="polish.css?v=4" />
+  <link rel="stylesheet" href="polish.css?v=6" />
   <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
   <link rel="canonical" href="https://aryanaditta.github.io/rfic-academic/research.html" />
   <script defer src="analytics.js?v=1"></script>
@@ -29,7 +29,7 @@
     <div class="page-intro">
       <p class="kicker">Research</p>
       <h1>RF/mmWave IC Design & Physical Realization</h1>
-      <p class="section-intro">My RFIC research centers on physically meaningful circuit design: SiGe power amplifiers, reproducible RF front-end characterization, process-aware implementation, electromagnetic effects, impedance matching, stability and design automation.</p>
+      <p class="section-intro">My RFIC research centers on SiGe PA/LNA design, small-signal and noise characterization, RF matching, stability, process-aware implementation, electromagnetic effects and the transition from schematic design toward full-custom physical realization.</p>
     </div>
 
     <article class="research-card research-card-stacked" id="pa">
@@ -48,8 +48,9 @@
           <li>The final process-aware configuration achieved approximately 17.4 dB gain at 28 GHz, with S11/S22 near −13 dB and K ≈ 12.</li>
           <li>Used machine learning as a supporting design-exploration layer while retaining circuit simulation as the primary verification authority.</li>
           <li>A first-author thesis-derived manuscript has been submitted to ICCIT 2026.</li>
+          <li>The work is continuing toward <strong>full-custom layout, DRC/LVS-oriented physical verification, parasitic-aware verification and GDSII-level realization</strong> of the 28-GHz PA.</li>
         </ul>
-        <ul class="tags"><li>IHP SG13G2</li><li>SiGe BiCMOS</li><li>28 GHz PA</li><li>Qucs-S</li><li>ngspice/Xyce</li><li>KLayout</li><li>EM-Aware Design</li></ul>
+        <ul class="tags"><li>IHP SG13G2</li><li>SiGe BiCMOS</li><li>28 GHz PA</li><li>Qucs-S</li><li>ngspice/Xyce</li><li>KLayout</li><li>EM-Aware Design</li><li>Full-Custom Layout</li><li>GDSII</li></ul>
       </div>
     </article>
 
@@ -63,12 +64,13 @@
         <ul class="profile-list support-points">
           <li>Studies four circuit families in one consistent framework: common-emitter PA, cascode PA, common-emitter LNA and cascode LNA.</li>
           <li>Varies physically meaningful circuit parameters including bias conditions, device sizing/multiplier, RF-choke values and input/output matching-network components.</li>
-          <li>Characterizes candidate configurations through DC verification, small-signal/noise/stability analysis, matching checks and large-signal harmonic-balance simulation before Python post-processing.</li>
+          <li>Characterizes candidate configurations through DC verification, small-signal S-parameter analysis, stability checks, noise/noise-figure analysis, impedance matching and large-signal harmonic-balance simulation before Python post-processing.</li>
+          <li>Builds a structured design-response dataset intended for comparative topology analysis and later surrogate/ML-assisted RF design-space exploration.</li>
           <li>The numerical design-response dataset remains private research data; the public repository exposes selected schematics, methodology and reproducible documentation only.</li>
           <li>All results are simulation-based and are not presented as fabricated or measured-silicon performance.</li>
         </ul>
         <p class="meta"><a href="https://github.com/AryanAditta/27GHz-RF-Front-End-Design-Space" target="_blank" rel="noopener">Public GitHub research repository ↗</a></p>
-        <ul class="tags"><li>27 GHz</li><li>SiGe RF Front End</li><li>Power Amplifiers</li><li>LNA</li><li>Qucs-S</li><li>ngspice</li><li>Xyce</li><li>Design-Space Exploration</li></ul>
+        <ul class="tags"><li>27 GHz</li><li>SiGe RF Front End</li><li>Common-Emitter</li><li>Cascode</li><li>PA</li><li>LNA</li><li>Noise Figure</li><li>RF Matching</li><li>Qucs-S</li><li>ngspice</li><li>Xyce</li></ul>
       </article>
     </section>
 
@@ -82,6 +84,7 @@
             <li>Coauthored a physics-seeded framework that starts from analytical L-section synthesis and learns residual corrections to localize a compact vendor-component search region.</li>
             <li>Final component pairs are selected through frequency-dependent vendor-model recomputation rather than direct ML prediction, keeping circuit evaluation as the final authority.</li>
           </ul>
+          <p class="meta">Full-paper link will be added when the public author copy is uploaded.</p>
           <ul class="tags"><li>RF Matching</li><li>Microwave Networks</li><li>Physics-Seeded Learning</li><li>Design Automation</li></ul>
         </article>
         <article class="card support-card">
