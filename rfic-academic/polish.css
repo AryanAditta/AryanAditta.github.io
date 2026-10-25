@@ -183,17 +183,18 @@
   text-decoration: none;
 }
 
-/* Main RFIC research: figure on the left, identity/summary on the right, detailed bullets below. */
+/* Main RFIC research: identity/question left, overview right, detailed evidence below. */
 .research-card-stacked {
-  grid-template-columns: minmax(340px, 44%) minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1.03fr) minmax(360px, .97fr);
   column-gap: 30px;
   row-gap: 10px;
   align-items: start;
 }
 .research-card-stacked .research-visual-wide {
-  grid-column: 1;
+  grid-column: 2;
   grid-row: 1 / span 4;
   min-height: 0;
+  height: auto;
   align-self: start;
   padding: 12px 13px 9px;
   justify-content: flex-start;
@@ -205,29 +206,29 @@
 }
 .research-card-stacked .research-visual-wide img {
   width: 100%;
-  max-height: none;
+  max-height: 300px;
   object-fit: contain;
 }
 .research-card-stacked .research-copy-wide { display: contents; }
 .research-card-stacked .research-copy-wide > .status-row {
-  grid-column: 2;
+  grid-column: 1;
   grid-row: 1;
   margin: 2px 0 0;
   align-self: end;
 }
 .research-card-stacked .research-copy-wide > .meta {
-  grid-column: 2;
+  grid-column: 1;
   grid-row: 2;
   margin: 0;
 }
 .research-card-stacked .research-copy-wide > h2 {
-  grid-column: 2;
+  grid-column: 1;
   grid-row: 3;
   margin: 0;
   font-size: 1.46rem;
 }
 .research-card-stacked .research-copy-wide > .research-question {
-  grid-column: 2;
+  grid-column: 1;
   grid-row: 4;
   margin: 4px 0 0;
   align-self: start;
@@ -365,21 +366,15 @@
     grid-template-columns: 1fr;
     gap: 14px;
   }
-  .research-card-stacked .research-visual-wide,
-  .research-card-stacked .research-copy-wide > .status-row,
-  .research-card-stacked .research-copy-wide > .meta,
-  .research-card-stacked .research-copy-wide > h2,
-  .research-card-stacked .research-copy-wide > .research-question,
-  .research-card-stacked .research-copy-wide > ul:not(.tags),
+  .research-card-stacked .research-copy-wide > .status-row { grid-column: 1; grid-row: 1; margin-top: 2px; }
+  .research-card-stacked .research-copy-wide > .meta { grid-column: 1; grid-row: 2; margin-top: -4px; }
+  .research-card-stacked .research-copy-wide > h2 { grid-column: 1; grid-row: 3; }
+  .research-card-stacked .research-copy-wide > .research-question { grid-column: 1; grid-row: 4; }
+  .research-card-stacked .research-visual-wide { grid-column: 1; grid-row: 5; }
+  .research-card-stacked .research-copy-wide > ul:not(.tags) { grid-column: 1; grid-row: 6; margin-top: 7px; }
   .research-card-stacked .research-copy-wide > .research-note,
-  .research-card-stacked .research-copy-wide > .research-action,
-  .research-card-stacked .research-copy-wide > .tags {
-    grid-column: 1;
-    grid-row: auto;
-  }
-  .research-card-stacked .research-copy-wide > .status-row { margin-top: 2px; }
-  .research-card-stacked .research-copy-wide > .meta { margin-top: -4px; }
-  .research-card-stacked .research-copy-wide > ul:not(.tags) { margin-top: 7px; }
+  .research-card-stacked .research-copy-wide > .research-action { grid-column: 1; grid-row: 7; }
+  .research-card-stacked .research-copy-wide > .tags { grid-column: 1; grid-row: 8; }
 
   .signal-grid,
   .signal-grid-skills { grid-template-columns: repeat(2, minmax(0, 1fr)); }
