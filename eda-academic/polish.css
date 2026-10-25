@@ -176,13 +176,13 @@
   display: grid;
   grid-template-columns: minmax(0, 1.03fr) minmax(360px, .97fr);
   gap: 28px;
-  align-items: stretch;
+  align-items: start;
 }
 .eda-flagship-summary {
   display: flex;
   min-width: 0;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
 }
 .eda-flagship-summary .status-row { margin-bottom: 10px; }
 .eda-flagship-summary .meta { margin: 0 0 7px; }
@@ -194,17 +194,18 @@
 .eda-flagship-summary .research-question { margin: 0; }
 .eda-flagship-visual {
   min-height: 0;
-  height: 100%;
-  padding: 12px 13px 9px;
+  height: auto;
+  align-self: start;
+  padding: 10px 12px 9px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
 }
 .eda-flagship-visual a {
   display: flex;
   width: 100%;
-  flex: 1 1 auto;
-  align-items: center;
+  flex: 0 0 auto;
+  align-items: flex-start;
   justify-content: center;
 }
 .eda-flagship-visual img {
