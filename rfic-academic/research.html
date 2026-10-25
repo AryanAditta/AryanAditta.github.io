@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css?v=1" />
-  <link rel="stylesheet" href="polish.css?v=7" />
+  <link rel="stylesheet" href="polish.css?v=8" />
   <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
   <link rel="canonical" href="https://aryanaditta.github.io/rfic-academic/research.html" />
   <script defer src="analytics.js?v=1"></script>
@@ -29,7 +29,7 @@
     <div class="page-intro">
       <p class="kicker">Research</p>
       <h1>RF/mmWave IC Design & Physical Realization</h1>
-      <p class="section-intro">My RFIC research centers on SiGe PA/LNA design, small-signal and noise characterization, RF matching, stability, process-aware implementation, electromagnetic effects and the transition from schematic design toward full-custom physical realization.</p>
+      <p class="section-intro">My RFIC research centers on <strong>SiGe PA/LNA design</strong>, small-signal and noise characterization, RF matching, stability, process-aware implementation, electromagnetic effects and the transition from schematic design toward <strong>full-custom physical realization</strong>.</p>
     </div>
 
     <article class="research-card research-card-stacked" id="pa">
@@ -43,12 +43,12 @@
         <h2>Open-Source RFIC Design and Verification of a 28-GHz Two-Stage Class-A SiGe Power Amplifier with Machine-Learning-Assisted Optimization</h2>
         <div class="research-question"><strong>Research question:</strong> How can an open-source-compatible RFIC flow carry a mmWave power amplifier from schematic design toward process-aware and EM-aware realization while preserving gain, matching and stability?</div>
         <ul>
-          <li>Designed and simulated a two-stage 28-GHz Class-A SiGe power amplifier using the IHP SG13G2 130-nm SiGe BiCMOS Open PDK with Qucs-S, ngspice/Xyce, KLayout and EM-aware modeling.</li>
-          <li>Developed a progressive ideal-passive → PDK-aware → EM-aware workflow to study how increasingly realistic passive implementation changes RF performance.</li>
-          <li>The final process-aware configuration achieved approximately 17.4 dB gain at 28 GHz, with S11/S22 near −13 dB and K ≈ 12.</li>
+          <li>Designed and simulated a two-stage 28-GHz Class-A SiGe power amplifier using the <strong>IHP SG13G2 130-nm SiGe BiCMOS Open PDK</strong> with Qucs-S, ngspice/Xyce, KLayout and EM-aware modeling.</li>
+          <li>Developed a progressive <strong>ideal-passive → PDK-aware → EM-aware</strong> workflow to study how increasingly realistic passive implementation changes RF performance.</li>
+          <li>The final process-aware configuration achieved approximately <strong>17.4 dB gain at 28 GHz</strong>, with S11/S22 near −13 dB and K ≈ 12.</li>
           <li>Used machine learning as a supporting design-exploration layer while retaining circuit simulation as the primary verification authority.</li>
           <li>A first-author thesis-derived manuscript has been submitted to ICCIT 2026.</li>
-          <li>The work is continuing toward <strong>full-custom layout, DRC/LVS-oriented physical verification, parasitic-aware verification and GDSII-level realization</strong> of the 28-GHz PA.</li>
+          <li>The work is continuing toward <strong>full-custom layout and GDSII-level realization</strong>, including DRC/LVS-oriented physical verification and parasitic-aware verification of the 28-GHz PA.</li>
         </ul>
         <p class="research-action"><a href="rfic-academicArian_Rahman_Aditta_28GHz_PA_Technical_Summary.pdf" target="_blank" rel="noopener">Technical Summary (PDF) ↗</a></p>
         <ul class="tags"><li>IHP SG13G2</li><li>SiGe BiCMOS</li><li>28 GHz PA</li><li>Qucs-S</li><li>ngspice/Xyce</li><li>KLayout</li><li>EM-Aware Design</li><li>Full-Custom Layout</li><li>GDSII</li></ul>
@@ -63,12 +63,12 @@
         <h3>Systematic Design-Space Generation Across SiGe RF Amplifier Topologies</h3>
         <p>This project develops a <strong>reproducible simulation and data-generation workflow</strong> for 27 GHz SiGe RF front-end amplifiers rather than optimizing only one circuit point.</p>
         <ul class="profile-list support-points">
-          <li>Studies four circuit families in one consistent framework: <strong>common-emitter PA, cascode PA, common-emitter LNA and cascode LNA</strong>.</li>
-          <li>Varies physically meaningful circuit parameters including <strong>bias conditions, device sizing/multiplier, RF-choke values and input/output matching-network components</strong>.</li>
-          <li>Characterizes candidate configurations through <strong>small-signal S-parameter analysis, stability, noise/noise-figure analysis, impedance matching and large-signal harmonic-balance simulation</strong> before Python post-processing.</li>
-          <li>Builds a structured <strong>design-response dataset for comparative topology analysis and later surrogate/ML-assisted RF design-space exploration</strong>.</li>
-          <li>The numerical design-response dataset remains private research data; the public repository exposes <strong>selected schematics, methodology and reproducible documentation</strong> only.</li>
-          <li>All results are <strong>simulation-based</strong> and are not presented as fabricated or measured-silicon performance.</li>
+          <li>Studies four circuit families in one consistent framework: <strong>common-emitter and cascode PA/LNA topologies</strong>.</li>
+          <li>Varies physically meaningful parameters including <strong>bias, device sizing, RF chokes and matching networks</strong>.</li>
+          <li>Characterizes candidate configurations through DC verification, S-parameter and stability analysis, <strong>noise-figure and harmonic-balance analysis</strong>, impedance matching and Python post-processing.</li>
+          <li>Builds a structured <strong>design-response dataset</strong> for comparative topology analysis and later surrogate/ML-assisted RF design-space exploration.</li>
+          <li>The numerical dataset remains private research data; the public repository exposes selected schematics, methodology and reproducible documentation.</li>
+          <li>All results are simulation-based and are not presented as fabricated or measured-silicon performance.</li>
         </ul>
         <p class="meta"><a href="https://github.com/AryanAditta/27GHz-RF-Front-End-Design-Space" target="_blank" rel="noopener">Public GitHub research repository ↗</a></p>
         <ul class="tags"><li>27 GHz</li><li>SiGe RF Front End</li><li>Common-Emitter</li><li>Cascode</li><li>PA</li><li>LNA</li><li>Noise Figure</li><li>RF Matching</li><li>Qucs-S</li><li>ngspice</li><li>Xyce</li></ul>
@@ -82,18 +82,18 @@
           <p class="kicker">Published · IEEE MARSCON 2026</p>
           <h3>LMatchNet-V: Vendor-Aware RF L-Section Matching</h3>
           <ul class="profile-list support-points">
-            <li>Coauthored a physics-seeded framework that starts from analytical L-section synthesis and learns residual corrections to localize a compact vendor-component search region.</li>
-            <li>Final component pairs are selected through frequency-dependent vendor-model recomputation rather than direct ML prediction, keeping circuit evaluation as the final authority.</li>
+            <li>Coauthored a physics-seeded framework that starts from <strong>analytical L-section synthesis</strong> and learns residual corrections to localize a compact vendor-component search region.</li>
+            <li>Final component pairs are selected through <strong>frequency-dependent vendor-model recomputation</strong> rather than direct ML prediction, keeping circuit evaluation as the final authority.</li>
           </ul>
-          <p class="meta"><a href="rfic-academicLMatchNet-V_MARSCON_2026_Author_Copy.pdf" target="_blank" rel="noopener">Read Paper (PDF) ↗</a></p>
+          <p class="meta"><a href="rfic-academicLMatchNet-V_MARSCON_2026_Author_Copy.pdf" target="_blank" rel="noopener">Read Author Copy (PDF) ↗</a></p>
           <ul class="tags"><li>RF Matching</li><li>Microwave Networks</li><li>Physics-Seeded Learning</li><li>Design Automation</li></ul>
         </article>
         <article class="card support-card">
           <p class="kicker">RF / Microwave Project</p>
           <h3>Dual-Band Microstrip Patch Antenna</h3>
           <ul class="profile-list support-points">
-            <li>Designed and simulated a dual-band microstrip patch antenna near 10 GHz and 21 GHz in CST Studio Suite.</li>
-            <li>Evaluated impedance matching, S-parameters, VSWR, radiation behavior and surface-current distributions.</li>
+            <li>Designed and simulated a dual-band microstrip patch antenna near <strong>10 GHz and 21 GHz</strong> in CST Studio Suite.</li>
+            <li>Evaluated impedance matching, <strong>S-parameters, VSWR and radiation behavior</strong> together with surface-current distributions.</li>
           </ul>
           <p class="meta"><a href="https://github.com/AryanAditta/Dual-Band-Patch-Antenna" target="_blank" rel="noopener">GitHub repository ↗</a></p>
           <ul class="tags"><li>CST Studio Suite</li><li>EM Simulation</li><li>S-Parameters</li><li>Antenna Design</li></ul>
@@ -107,13 +107,13 @@
         <article class="card support-card complementary-card">
           <div class="status-row"><span class="badge submitted">Manuscript Submitted</span><span class="badge first">First Author</span></div>
           <h3>Learning-Guided VLSI Floorplanning</h3>
-          <p>Learning-guided physical-design research combining graph-based guidance with B*-tree simulated annealing, structured legalization and explicit feasibility checks.</p>
+          <p>Learning-guided physical-design research combining graph-based guidance with <strong>B*-tree simulated annealing</strong>, structured legalization and explicit feasibility checks.</p>
           <ul class="tags"><li>Physical Design</li><li>Graph Neural Networks</li><li>B*-Tree</li><li>Optimization</li></ul>
         </article>
         <article class="card support-card complementary-card">
           <div class="status-row"><span class="badge">Manuscript in Preparation</span></div>
           <h3>Source-Aware RTL Area & Timing Prediction</h3>
-          <p>Prospective evaluation of early mapped-area and pre-layout timing prediction from RTL using source-aware grouping, frozen-model confirmation and a Yosys/ABC/OpenSTA Nangate45 flow.</p>
+          <p>Prospective evaluation of early mapped-area and pre-layout timing prediction from RTL using <strong>source-aware grouping and frozen-model confirmation</strong> under a Yosys/ABC/OpenSTA Nangate45 flow.</p>
           <p class="meta"><a href="https://github.com/AryanAditta/rtl-qor-source-aware-evaluation" target="_blank" rel="noopener">Reproducibility repository ↗</a></p>
           <ul class="tags"><li>RTL</li><li>QoR Prediction</li><li>Yosys</li><li>OpenSTA</li><li>Prospective Evaluation</li></ul>
         </article>
