@@ -4,15 +4,15 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Arian Rahman Aditta · RF/mmWave IC Research</title>
-  <meta name="description" content="Academic research homepage of Arian Rahman Aditta focused on RF/mmWave integrated circuits, SiGe BiCMOS, power amplifiers, RF front-end design-space generation and physical realization." />
+  <meta name="description" content="Academic research homepage of Arian Rahman Aditta focused on RF/mmWave integrated circuits, SiGe BiCMOS, power amplifiers, LNA/front-end design, RF characterization and physical realization." />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Arian Rahman Aditta · RF/mmWave IC Research" />
-  <meta property="og:description" content="28 GHz SiGe PA design, process/EM-aware realization and 27 GHz RF front-end design-space research in IHP SG13G2." />
+  <meta property="og:description" content="28 GHz SiGe PA realization, full-custom layout progression and 27 GHz PA/LNA RF front-end design-space research in IHP SG13G2." />
   <meta property="og:url" content="https://aryanaditta.github.io/rfic-academic/" />
   <meta property="og:image" content="https://raw.githubusercontent.com/AryanAditta/AryanAditta/main/profile.jpg" />
   <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=1" /><link rel="stylesheet" href="polish.css?v=5" />
+  <link rel="stylesheet" href="style.css?v=1" /><link rel="stylesheet" href="polish.css?v=6" />
   <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" /><link rel="canonical" href="https://aryanaditta.github.io/rfic-academic/" />
   <script defer src="analytics.js?v=1"></script>
 </head>
@@ -26,21 +26,22 @@
       <div>
         <p class="kicker">ECE Graduate · KUET</p><h1>Arian Rahman Aditta</h1>
         <p class="role">RF/mmWave IC Design · Analog/RF IC Design · RFIC Design Automation</p>
-        <p>I am an Electronics and Communication Engineering graduate from Khulna University of Engineering & Technology (KUET). My primary research interests are RF/mmWave integrated circuits, analog/RF IC design, SiGe BiCMOS and physically meaningful RFIC realization.</p>
-        <p>My current work combines mmWave power-amplifier realization with reproducible 27 GHz RF front-end design-space generation across PA and LNA topologies using the IHP SG13G2 open SiGe platform.</p>
+        <p>I am an Electronics and Communication Engineering graduate from Khulna University of Engineering & Technology (KUET). My primary research interests are <strong>RF/mmWave integrated circuits</strong>, analog/RF IC design, SiGe BiCMOS and physically meaningful RFIC realization.</p>
+        <p>I am currently pursuing two connected RFIC directions. The first extends my <strong>28 GHz two-stage SiGe power-amplifier thesis</strong> toward full-custom layout, physical verification and GDSII-oriented realization. In parallel, I am developing a <strong>27 GHz RF front-end design space</strong> spanning common-emitter and cascode PA/LNA topologies, with small-signal, stability, noise/noise-figure and matching analysis under the IHP SG13G2 Open PDK.</p>
         <div class="identity-links" aria-label="Contact and academic profiles"><a href="mailto:aryanrahmanaditta@gmail.com"><span class="contact-icon">✉</span><span>Email</span></a><a href="Arian_Rahman_Aditta_RFIC_CV.pdf" target="_blank" rel="noopener"><span class="contact-icon">📄</span><span>CV</span></a><a href="https://scholar.google.com/citations?user=Id4ByyUAAAAJ&hl=en" target="_blank" rel="noopener"><span class="contact-icon">🎓</span><span>Google Scholar</span></a><a href="https://www.linkedin.com/in/arian-rahman-aditta/" target="_blank" rel="noopener"><span class="contact-icon text-icon">in</span><span>LinkedIn</span></a><a href="https://github.com/AryanAditta" target="_blank" rel="noopener"><span class="contact-icon text-icon">GH</span><span>GitHub</span></a></div>
       </div>
     </section>
 
     <section class="technical-signal" aria-labelledby="technical-signal-title">
-      <div class="signal-heading"><p class="kicker">Technical Signal</p><h2 id="technical-signal-title">Current RFIC Evidence at a Glance</h2></div>
-      <div class="signal-grid">
-        <div class="signal-item"><span class="signal-value">17.4 dB @ 28 GHz</span><span class="signal-label">Final process-aware PA gain</span></div>
-        <div class="signal-item"><span class="signal-value">S11 / S22 ≈ −13 dB</span><span class="signal-label">Input / output matching</span></div>
-        <div class="signal-item"><span class="signal-value">K ≈ 12</span><span class="signal-label">Stability factor at 28 GHz</span></div>
-        <div class="signal-item"><span class="signal-value">CE · Cascode · PA · LNA</span><span class="signal-label">27 GHz front-end design-space program</span></div>
+      <div class="signal-heading"><p class="kicker">Technical Signal</p><h2 id="technical-signal-title">Current RFIC Capability at a Glance</h2></div>
+      <div class="signal-grid signal-grid-skills">
+        <div class="signal-item"><span class="signal-value">PA & LNA Topologies</span><span class="signal-label">Common-emitter and cascode amplifier design at mmWave frequencies</span></div>
+        <div class="signal-item"><span class="signal-value">RF Matching</span><span class="signal-label">Input/output impedance matching, matching-network synthesis and tuning</span></div>
+        <div class="signal-item"><span class="signal-value">Noise & Small-Signal</span><span class="signal-label">Noise-figure analysis, S-parameters, gain, reverse isolation and stability</span></div>
+        <div class="signal-item"><span class="signal-value">IHP SG13G2 Open PDK</span><span class="signal-label">130-nm SiGe BiCMOS device- and process-aware RF circuit design</span></div>
+        <div class="signal-item"><span class="signal-value">Qucs-S · ngspice · Xyce</span><span class="signal-label">DC, small-signal, noise and large-signal / harmonic-balance workflows</span></div>
+        <div class="signal-item"><span class="signal-value">KLayout · EM · GDSII</span><span class="signal-label">Physical realization, EM-aware verification and full-custom layout progression</span></div>
       </div>
-      <p class="signal-caption"><strong>IHP SG13G2 130-nm SiGe BiCMOS.</strong> Current work is simulation-based; circuit simulation and process/EM-aware verification remain the engineering authority.</p>
     </section>
 
     <section>
@@ -48,7 +49,7 @@
       <div class="featured-grid">
         <article class="feature-card">
           <div class="feature-visual feature-visual-captioned"><a class="feature-image-link" href="https://raw.githubusercontent.com/AryanAditta/AryanAditta/main/assets/research/pa-research-overview.png" target="_blank" rel="noopener"><img src="https://raw.githubusercontent.com/AryanAditta/AryanAditta/main/assets/research/pa-research-overview.png" alt="Overview of the 28 GHz SiGe power amplifier research workflow" loading="lazy" /></a><a class="feature-overview-link" href="https://raw.githubusercontent.com/AryanAditta/AryanAditta/main/assets/research/pa-research-overview.png" target="_blank" rel="noopener">Open full research overview ↗</a></div>
-          <div class="feature-body"><div class="status-row compact-status"><span class="badge submitted">Manuscript Submitted</span><span class="badge first">First Author</span></div><p class="kicker">RF/mmWave IC Design</p><h3>28 GHz SiGe Power Amplifier Design & Verification</h3><p>Open-source-compatible progression from schematic RF design toward process-aware and EM-aware realization in IHP SG13G2 SiGe BiCMOS.</p><a href="research.html#pa">Explore research →</a></div>
+          <div class="feature-body"><div class="status-row compact-status"><span class="badge submitted">Manuscript Submitted</span><span class="badge first">First Author</span></div><p class="kicker">RF/mmWave IC Design</p><h3>28 GHz SiGe Power Amplifier Design & Verification</h3><p>Open-source-compatible progression from schematic RF design toward process-aware and EM-aware realization, now extending toward full-custom layout and GDSII-oriented implementation.</p><a href="research.html#pa">Explore research →</a></div>
         </article>
         <article class="feature-card">
           <div class="feature-visual feature-visual-captioned"><a class="feature-image-link" href="https://github.com/AryanAditta/27GHz-RF-Front-End-Design-Space" target="_blank" rel="noopener"><img src="https://raw.githubusercontent.com/AryanAditta/27GHz-RF-Front-End-Design-Space/main/circuits/ce_pa/figures/Common%20Emitter%20Skeleton.png" alt="Common-emitter 27 GHz SiGe RF front-end topology" loading="lazy" /></a><a class="feature-overview-link" href="https://github.com/AryanAditta/27GHz-RF-Front-End-Design-Space" target="_blank" rel="noopener">Open research repository ↗</a></div>
@@ -66,8 +67,8 @@
         <div class="timeline-item"><span class="timeline-dot" aria-hidden="true"></span><time>Oct 2026</time><p><strong>Journal submission.</strong> First-author enhancer benchmark-audit manuscript submitted to <em>BMC Bioinformatics</em> with a public reproducibility repository and Zenodo archive.</p></div>
         <div class="timeline-item"><span class="timeline-dot" aria-hidden="true"></span><time>Oct 2026</time><p><strong>EDA manuscript preparation.</strong> Source-aware RTL area/timing prediction study prepared for <em>Integration, the VLSI Journal</em> with prospective confirmation and a public reproducibility package.</p></div>
         <div class="timeline-item"><span class="timeline-dot" aria-hidden="true"></span><time>Sep 2026</time><p><strong>RFIC submission.</strong> First-author thesis-derived 28 GHz SiGe PA manuscript submitted to ICCIT 2026.</p></div>
-        <div class="timeline-item"><span class="timeline-dot" aria-hidden="true"></span><time>Aug 2026</time><p><strong>RF publication.</strong> <em>LMatchNet-V</em> published at IEEE MARSCON 2026.</p></div>
         <div class="timeline-item"><span class="timeline-dot" aria-hidden="true"></span><time>Sep 2026</time><p><strong>Publication.</strong> First-author <em>SenseStick</em> work published at IEEE BECITHCON 2026.</p></div>
+        <div class="timeline-item"><span class="timeline-dot" aria-hidden="true"></span><time>Aug 2026</time><p><strong>RF publication.</strong> <em>LMatchNet-V</em> published at IEEE MARSCON 2026.</p></div>
       </div>
     </section>
   </main>
