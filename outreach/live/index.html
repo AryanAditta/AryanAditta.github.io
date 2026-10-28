@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex,nofollow,noarchive" />
+  <meta name="theme-color" content="#0b1f36" />
+  <title>Outreach OS Live</title>
+  <link rel="stylesheet" href="./styles.css" />
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
+  <script src="./app.js" defer></script>
+</head>
+<body>
+  <div id="toast" class="toast"></div>
+
+  <div class="shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand"><div class="mark">A</div><div><strong>Outreach OS</strong><span>Live workspace</span></div></div>
+      <nav>
+        <button class="nav active" data-view="dashboard">Dashboard</button>
+        <button class="nav" data-view="actions">Action Queue <b id="actionBadge">0</b></button>
+        <button class="nav" data-view="professors">Professors</button>
+        <button class="nav" data-view="research">Research / RA</button>
+        <button class="nav" data-view="career">Career</button>
+        <button class="nav" data-view="waivers">Fee Waivers</button>
+        <button class="nav" data-view="playbook">Response Playbook</button>
+        <button class="nav" data-view="settings">Settings</button>
+      </nav>
+      <div class="sidebar-foot">
+        <div class="connection" id="connectionBox"><span class="dot"></span><div><strong id="connectionTitle">Not connected</strong><small id="connectionSubtitle">Google Workspace</small></div></div>
+        <p>Google Sheets is used only as a hidden database. You do not need to open it.</p>
+      </div>
+    </aside>
+
+    <main>
+      <header class="topbar">
+        <div class="top-left"><button id="menuBtn" class="icon mobile">☰</button><div><h1 id="pageTitle">Dashboard</h1><span id="pageSub">Live graduate application workspace</span></div></div>
+        <div class="top-actions">
+          <button class="search-btn" id="globalSearchBtn">⌕ <span>Search everything</span><kbd>Ctrl K</kbd></button>
+          <span class="sync-chip" id="syncChip">Offline</span>
+          <button class="btn secondary" id="syncBtn">Sync now</button>
+          <button class="btn primary" id="connectBtn">Connect Google</button>
+        </div>
+      </header>
+
+      <section class="setup" id="setupPanel">
+        <div class="setup-card">
+          <span class="eyebrow">ONE-TIME CONNECTION</span>
+          <h2>Make the website your only workspace.</h2>
+          <p>Once connected, Outreach OS reads and writes your private tracker directly, shows Gmail conversations and can create Calendar events. Google Sheets stays in the background as the database.</p>
+          <div class="setup-grid">
+            <div class="step"><b>1</b><div><strong>Create a Google OAuth Web Client</strong><span>Authorized JavaScript origin: <code>https://aryanaditta.github.io</code></span></div></div>
+            <div class="step"><b>2</b><div><strong>Enable Google Sheets, Gmail and Calendar APIs</strong><span>Personal-use OAuth is sufficient for this private tool.</span></div></div>
+            <label class="field full"><span>OAuth Client ID</span><input id="clientIdInput" placeholder="123456789-...apps.googleusercontent.com" /></label>
+          </div>
+          <div class="setup-actions"><button class="btn secondary" id="saveClientBtn">Save client ID</button><button class="btn primary" id="setupConnectBtn">Save & connect</button></div>
+          <small class="muted">The client ID is not a secret. It is stored only in this browser. No client secret is used in this static web app.</small>
+        </div>
+      </section>
+
+      <div id="workspace" class="hidden">
+        <section class="view active" id="view-dashboard">
+          <div class="hero"><div><span class="eyebrow">TODAY</span><h2>One place for the whole application workflow.</h2><p id="heroText">Connect Google to load live data.</p><div class="hero-actions"><button class="btn light" data-go="actions">Open priority queue</button><button class="btn glass" id="addProfessorHero">+ Add professor</button></div></div><div class="clock"><span id="todayLabel"></span><strong id="clock"></strong><small>Asia/Dhaka</small></div></div>
+          <div id="metrics" class="metrics"></div>
+          <div class="dash-grid">
+            <article class="panel span2"><div class="panel-head"><div><span class="eyebrow">PRIORITY</span><h3>Do these first</h3></div><button class="text-btn" data-go="actions">View all →</button></div><div id="priorityList"></div></article>
+            <article class="panel"><div class="panel-head"><div><span class="eyebrow">NEXT EVENT</span><h3>Upcoming focus</h3></div></div><div id="nextEvent"></div></article>
+            <article class="panel"><div class="panel-head"><div><span class="eyebrow">PIPELINE</span><h3>Current state</h3></div></div><div id="pipeline"></div></article>
+            <article class="panel span2"><div class="panel-head"><div><span class="eyebrow">RECENT</span><h3>Meaningful interactions</h3></div></div><div id="activity"></div></article>
+          </div>
+        </section>
+
+        <section class="view" id="view-actions"><div class="section-head"><div><span class="eyebrow">OPERATIONS</span><h2>Action Queue</h2><p>Formula-driven from the live tracker.</p></div></div><div class="toolbar"><div class="segmented" id="urgencyFilter"><button class="active" data-v="ALL">All</button><button data-v="NOW">Now</button><button data-v="TODAY">Today</button><button data-v="NEXT">Next</button><button data-v="PREP">Prep</button><button data-v="INFO">Info</button></div><input id="actionSearch" placeholder="Search actions..." /></div><div id="actionList" class="list"></div></section>
+
+        <section class="view" id="view-professors"><div class="section-head row"><div><span class="eyebrow">GRADUATE OUTREACH</span><h2>Professors</h2><p>Edit tracker state without touching the spreadsheet.</p></div><button class="btn primary" id="addProfessorBtn">+ Add professor</button></div><div class="toolbar wrap"><input id="profSearch" class="grow" placeholder="Search professor, university, track..." /><select id="profCountry"><option value="ALL">All countries</option></select><select id="profStatus"><option value="ALL">All statuses</option></select><select id="profPriority"><option value="ALL">All priorities</option></select></div><div id="profCount" class="count"></div><div id="professorList" class="prof-grid"></div></section>
+
+        <section class="view" id="view-research"><div class="section-head"><div><span class="eyebrow">RESEARCH / RA</span><h2>Research outreach</h2><p>Current RA, internship and research conversations.</p></div></div><input id="researchSearch" class="wide-search" placeholder="Search research outreach..." /><div id="researchList" class="list"></div></section>
+
+        <section class="view" id="view-career"><div class="section-head"><div><span class="eyebrow">CAREER</span><h2>Career tracker</h2><p>Applications, assessments and interviews.</p></div></div><input id="careerSearch" class="wide-search" placeholder="Search career items..." /><div id="careerList" class="list"></div></section>
+
+        <section class="view" id="view-waivers"><div class="section-head"><div><span class="eyebrow">APPLICATION COST</span><h2>Fee Waivers</h2><p>Webinar, deadline and automatic waiver routes in one view.</p></div></div><div class="waiver-stats" id="waiverStats"></div><div class="toolbar wrap"><input id="waiverSearch" class="grow" placeholder="Search university, route, status..." /><select id="waiverType"><option value="ALL">All routes</option><option value="Webinar Waivers">Webinar</option><option value="Deadline Waivers">Deadline</option><option value="Other Waiver Routes">Other</option></select></div><div id="waiverList" class="waiver-grid"></div></section>
+
+        <section class="view" id="view-playbook"><div class="section-head"><div><span class="eyebrow">RESPONSE LOGIC</span><h2>Response Playbook</h2><p>How to classify and act on professor replies.</p></div></div><input id="playSearch" class="wide-search" placeholder="Search response type..." /><div id="playbookList" class="play-grid"></div></section>
+
+        <section class="view" id="view-settings"><div class="settings-grid"><article class="panel"><span class="eyebrow">GOOGLE CONNECTION</span><h3>Workspace access</h3><p class="muted">The site calls Google APIs directly from your browser. Tokens are kept in memory and are not committed to GitHub.</p><label class="field"><span>OAuth Client ID</span><input id="settingsClientId" /></label><div class="button-row"><button class="btn secondary" id="saveSettingsClient">Save</button><button class="btn primary" id="settingsConnect">Reconnect Google</button></div></article><article class="panel"><span class="eyebrow">LIVE DATA</span><h3>Backend status</h3><div id="backendStatus" class="status-list"></div><button class="btn secondary" id="settingsSync">Sync all now</button></article><article class="panel danger-panel"><span class="eyebrow">LOCAL DEVICE</span><h3>Clear local cache</h3><p class="muted">This removes cached live data and your OAuth client ID from this browser. It does not change Google data.</p><button class="btn danger" id="clearLocal">Clear browser data</button></article></div></section>
+      </div>
+    </main>
+  </div>
+
+  <nav class="bottom-nav"><button data-view="dashboard" class="active">Home</button><button data-view="actions">Actions</button><button data-view="professors">Professors</button><button data-view="waivers">Waivers</button><button data-view="settings">More</button></nav>
+
+  <div class="overlay hidden" id="drawerOverlay"><aside class="drawer"><button class="drawer-close" id="drawerClose">×</button><div id="drawerBody"></div></aside></div>
+  <div class="overlay hidden" id="modalOverlay"><div class="modal"><button class="drawer-close" id="modalClose">×</button><div id="modalBody"></div></div></div>
+  <div class="overlay hidden" id="searchOverlay"><div class="search-modal"><div class="search-top"><span>⌕</span><input id="globalSearch" placeholder="Search professors, actions, research, career, waivers..." /><kbd>Esc</kbd></div><div id="globalResults"></div></div></div>
+</body>
+</html>
