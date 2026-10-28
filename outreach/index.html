@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex,nofollow,noarchive" />
+  <meta name="color-scheme" content="light dark" />
+  <title>Fall 2027 Outreach Control Center</title>
+  <link rel="stylesheet" href="./styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js" defer></script>
+  <script src="./app.js" defer></script>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand">
+        <div class="brand-mark">A</div>
+        <div>
+          <strong>Outreach OS</strong>
+          <span>Fall 2027</span>
+        </div>
+      </div>
+
+      <nav class="nav" aria-label="Primary">
+        <button class="nav-item active" data-view="dashboard"><span>⌂</span> Dashboard</button>
+        <button class="nav-item" data-view="actions"><span>✓</span> Action Queue <b id="navActionCount">0</b></button>
+        <button class="nav-item" data-view="professors"><span>◎</span> Professors</button>
+        <button class="nav-item" data-view="research"><span>⌁</span> Research / RA</button>
+        <button class="nav-item" data-view="career"><span>◇</span> Career</button>
+        <button class="nav-item" data-view="playbook"><span>?</span> Response Playbook</button>
+      </nav>
+
+      <div class="sidebar-bottom">
+        <div class="privacy-card">
+          <strong>Local-data mode</strong>
+          <p>Your workbook is parsed in this browser. Tracker content is never uploaded to this GitHub site.</p>
+        </div>
+        <button class="ghost full" id="clearLocalData">Clear local data</button>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <button class="icon-btn mobile-menu" id="menuBtn" aria-label="Toggle menu">☰</button>
+        <div class="top-title">
+          <h1 id="pageTitle">Control Center</h1>
+          <span id="syncText">No workbook loaded</span>
+        </div>
+        <div class="top-actions">
+          <a class="ghost" id="sheetLink" href="https://docs.google.com/spreadsheets/d/1ePKz6ltVfo9Bs_oDsMhXT2GlnvkJW8zl_9QJi8KCjpE/edit" target="_blank" rel="noopener">Open Sheet</a>
+          <a class="ghost desktop-only" href="https://docs.google.com/spreadsheets/d/1Y7iAestbfcH57WpSpIYIjM1eA27MaDnJuipnvAejEgg/edit" target="_blank" rel="noopener">Fee Waivers</a>
+          <a class="primary" id="downloadWorkbook" href="https://docs.google.com/spreadsheets/d/1ePKz6ltVfo9Bs_oDsMhXT2GlnvkJW8zl_9QJi8KCjpE/export?format=xlsx" target="_blank" rel="noopener">Download latest</a>
+          <label class="primary file-label" for="workbookInput">Import .xlsx</label>
+          <input id="workbookInput" type="file" accept=".xlsx,.xls" hidden />
+          <button class="icon-btn" id="themeBtn" aria-label="Toggle theme">◐</button>
+        </div>
+      </header>
+
+      <section id="emptyState" class="empty-state">
+        <div class="empty-icon">↥</div>
+        <h2>Load your outreach tracker</h2>
+        <p>Download the latest workbook from Google Sheets, then import it here. The dashboard will stay cached on this device until you clear it.</p>
+        <div class="empty-actions">
+          <a class="primary large" href="https://docs.google.com/spreadsheets/d/1ePKz6ltVfo9Bs_oDsMhXT2GlnvkJW8zl_9QJi8KCjpE/export?format=xlsx" target="_blank" rel="noopener">1. Download latest workbook</a>
+          <label class="secondary large" for="workbookInput">2. Import workbook</label>
+        </div>
+        <div class="drop-zone" id="dropZone">or drag & drop the .xlsx file here</div>
+      </section>
+
+      <div id="appContent" class="hidden">
+        <section class="view active" id="view-dashboard">
+          <div class="hero-panel">
+            <div>
+              <span class="eyebrow">TODAY</span>
+              <h2>What needs your attention?</h2>
+              <p>Replies, meetings and due follow-ups first. New outreach comes after active conversations.</p>
+            </div>
+            <div class="hero-time">
+              <span id="todayLabel"></span>
+              <strong id="localClock"></strong>
+              <small>Asia/Dhaka</small>
+            </div>
+          </div>
+
+          <div class="metric-grid" id="metricGrid"></div>
+
+          <div class="dashboard-grid">
+            <section class="panel span-2">
+              <div class="panel-head">
+                <div>
+                  <span class="eyebrow">PRIORITY QUEUE</span>
+                  <h3>Do these first</h3>
+                </div>
+                <button class="link-btn" data-go="actions">View all →</button>
+              </div>
+              <div id="priorityList" class="priority-list"></div>
+            </section>
+
+            <section class="panel">
+              <div class="panel-head">
+                <div>
+                  <span class="eyebrow">PIPELINE</span>
+                  <h3>Current state</h3>
+                </div>
+              </div>
+              <div id="pipelineBars" class="pipeline-bars"></div>
+            </section>
+
+            <section class="panel">
+              <div class="panel-head">
+                <div>
+                  <span class="eyebrow">NEXT EVENT</span>
+                  <h3>Upcoming focus</h3>
+                </div>
+              </div>
+              <div id="nextEvent" class="event-card"></div>
+            </section>
+
+            <section class="panel span-2">
+              <div class="panel-head">
+                <div>
+                  <span class="eyebrow">RECENT ACTIVITY</span>
+                  <h3>Meaningful interactions</h3>
+                </div>
+              </div>
+              <div id="recentInteractions" class="timeline"></div>
+            </section>
+          </div>
+        </section>
+
+        <section class="view" id="view-actions">
+          <div class="section-toolbar">
+            <div class="segmented" id="actionUrgencyFilter">
+              <button class="active" data-value="ALL">All</button>
+              <button data-value="NOW">Now</button>
+              <button data-value="TODAY">Today</button>
+              <button data-value="NEXT">Next</button>
+              <button data-value="PREP">Prep</button>
+              <button data-value="INFO">Info</button>
+            </div>
+            <div class="toolbar-right">
+              <select id="actionWorkflowFilter" aria-label="Workflow filter"><option value="ALL">All workflows</option></select>
+              <input class="search" id="actionSearch" type="search" placeholder="Search queue…" />
+            </div>
+          </div>
+          <div id="actionCards" class="card-list"></div>
+        </section>
+
+        <section class="view" id="view-professors">
+          <div class="section-toolbar wrap">
+            <div class="toolbar-right grow">
+              <input class="search grow" id="professorSearch" type="search" placeholder="Search professor, university, track…" />
+              <select id="countryFilter"><option value="ALL">All countries</option></select>
+              <select id="statusFilter"><option value="ALL">All statuses</option></select>
+              <select id="trackFilter"><option value="ALL">All tracks</option></select>
+            </div>
+          </div>
+          <div class="table-card">
+            <div class="table-summary"><span id="professorCount">0</span> records</div>
+            <div class="table-scroll">
+              <table>
+                <thead><tr><th>Professor</th><th>University</th><th>Country</th><th>Track</th><th>Priority</th><th>Status</th><th>Reply</th><th>Next action</th></tr></thead>
+                <tbody id="professorTable"></tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <section class="view" id="view-research">
+          <div class="section-toolbar">
+            <div><span class="eyebrow">RESEARCH / RA</span><h2 class="section-title">Research outreach</h2></div>
+            <input class="search" id="researchSearch" type="search" placeholder="Search…" />
+          </div>
+          <div id="researchCards" class="card-list"></div>
+        </section>
+
+        <section class="view" id="view-career">
+          <div class="section-toolbar">
+            <div><span class="eyebrow">CAREER</span><h2 class="section-title">Jobs, internships & fellowships</h2></div>
+            <input class="search" id="careerSearch" type="search" placeholder="Search…" />
+          </div>
+          <div id="careerCards" class="card-list"></div>
+        </section>
+
+        <section class="view" id="view-playbook">
+          <div class="playbook-intro">
+            <span class="eyebrow">RESPONSE LOGIC</span>
+            <h2>What to do when a professor replies</h2>
+            <p>Use this before changing a conversation state. Gmail remains the evidence source.</p>
+          </div>
+          <div id="playbookGrid" class="playbook-grid"></div>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <div class="toast" id="toast" role="status"></div>
+</body>
+</html>
