@@ -5,195 +5,83 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="robots" content="noindex,nofollow,noarchive" />
   <meta name="color-scheme" content="light dark" />
-  <title>Fall 2027 Outreach Control Center</title>
+  <meta name="theme-color" content="#0b1f36" />
+  <title>Fall 2027 Outreach OS</title>
   <link rel="stylesheet" href="./styles.css" />
   <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js" defer></script>
   <script src="./app.js" defer></script>
 </head>
 <body>
+  <svg class="svg-sprite" aria-hidden="true">
+    <symbol id="i-home" viewBox="0 0 24 24"><path d="M3 11.5 12 4l9 7.5v8a1.5 1.5 0 0 1-1.5 1.5h-5v-6h-5v6h-5A1.5 1.5 0 0 1 3 19.5z"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/><circle cx="12" cy="12" r="9"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3 20c.6-4 2.7-6 6-6s5.4 2 6 6M16 6a3 3 0 0 1 0 6M17 14c2.2.7 3.6 2.6 4 6"/></symbol>
+    <symbol id="i-flask" viewBox="0 0 24 24"><path d="M9 3h6M10 3v6l-5.5 9a2 2 0 0 0 1.7 3h11.6a2 2 0 0 0 1.7-3L14 9V3M7.5 15h9"/></symbol>
+    <symbol id="i-briefcase" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 12h18M10 12v2h4v-2"/></symbol>
+    <symbol id="i-book" viewBox="0 0 24 24"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H11v16H6.5A2.5 2.5 0 0 0 4 21.5zM20 5.5A2.5 2.5 0 0 0 17.5 3H13v16h4.5a2.5 2.5 0 0 1 2.5 2.5z"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></symbol>
+    <symbol id="i-refresh" viewBox="0 0 24 24"><path d="M20 6v5h-5M4 18v-5h5M19 11a7.5 7.5 0 0 0-13-4L4 9M5 13a7.5 7.5 0 0 0 13 4l2-2"/></symbol>
+    <symbol id="i-upload" viewBox="0 0 24 24"><path d="M12 16V4m0 0-5 5m5-5 5 5M4 15v4a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-4"/></symbol>
+    <symbol id="i-external" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-9 9M19 13v6a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h6"/></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20 15.5A8 8 0 0 1 8.5 4 8.5 8.5 0 1 0 20 15.5z"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></symbol>
+    <symbol id="i-chevron" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3 4.5 6v5.5c0 4.8 3 7.8 7.5 9.5 4.5-1.7 7.5-4.7 7.5-9.5V6z"/><path d="m9 12 2 2 4-4"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></symbol>
+    <symbol id="i-link" viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.5.5l2-2a5 5 0 0 0-7-7l-1.1 1.1M14 11a5 5 0 0 0-7.5-.5l-2 2a5 5 0 0 0 7 7l1.1-1.1"/></symbol>
+    <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M8 3v4M16 3v4M3 10h18"/></symbol>
+    <symbol id="i-filter" viewBox="0 0 24 24"><path d="M4 5h16M7 12h10M10 19h4"/></symbol>
+    <symbol id="i-command" viewBox="0 0 24 24"><path d="M9 6V5a3 3 0 1 0-3 3h12a3 3 0 1 0-3-3v14a3 3 0 1 0 3-3H6a3 3 0 1 0 3 3z"/></symbol>
+    <symbol id="i-database" viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v7c0 1.7 3.6 3 8 3s8-1.3 8-3V5M4 12v7c0 1.7 3.6 3 8 3s8-1.3 8-3v-7"/></symbol>
+    <symbol id="i-copy" viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V5a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h3"/></symbol>
+    <symbol id="i-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></symbol>
+    <symbol id="i-list" viewBox="0 0 24 24"><path d="M9 6h11M9 12h11M9 18h11"/><circle cx="4" cy="6" r="1"/><circle cx="4" cy="12" r="1"/><circle cx="4" cy="18" r="1"/></symbol>
+  </svg>
+
   <div class="app-shell">
-    <aside class="sidebar" id="sidebar">
-      <div class="brand">
+    <aside class="sidebar" id="sidebar" aria-label="Main navigation">
+      <div class="brand-block">
         <div class="brand-mark">A</div>
-        <div>
-          <strong>Outreach OS</strong>
-          <span>Fall 2027</span>
-        </div>
+        <div class="brand-copy"><strong>Outreach OS</strong><span>Fall 2027 workspace</span></div>
+        <button class="sidebar-close icon-btn" id="sidebarClose" aria-label="Close navigation"><svg><use href="#i-x"/></svg></button>
       </div>
-
-      <nav class="nav" aria-label="Primary">
-        <button class="nav-item active" data-view="dashboard"><span>⌂</span> Dashboard</button>
-        <button class="nav-item" data-view="actions"><span>✓</span> Action Queue <b id="navActionCount">0</b></button>
-        <button class="nav-item" data-view="professors"><span>◎</span> Professors</button>
-        <button class="nav-item" data-view="research"><span>⌁</span> Research / RA</button>
-        <button class="nav-item" data-view="career"><span>◇</span> Career</button>
-        <button class="nav-item" data-view="playbook"><span>?</span> Response Playbook</button>
-      </nav>
-
-      <div class="sidebar-bottom">
-        <div class="privacy-card">
-          <strong>Local-data mode</strong>
-          <p>Your workbook is parsed in this browser. Tracker content is never uploaded to this GitHub site.</p>
-        </div>
-        <button class="ghost full" id="clearLocalData">Clear local data</button>
-      </div>
+      <div class="nav-group"><span class="nav-label">Workspace</span><nav class="nav"><button class="nav-item active" data-view="dashboard"><svg><use href="#i-home"/></svg><span>Dashboard</span></button><button class="nav-item" data-view="actions"><svg><use href="#i-check"/></svg><span>Action Queue</span><b id="navActionCount">0</b></button></nav></div>
+      <div class="nav-group"><span class="nav-label">Trackers</span><nav class="nav"><button class="nav-item" data-view="professors"><svg><use href="#i-users"/></svg><span>Professors</span></button><button class="nav-item" data-view="research"><svg><use href="#i-flask"/></svg><span>Research / RA</span></button><button class="nav-item" data-view="career"><svg><use href="#i-briefcase"/></svg><span>Career</span></button></nav></div>
+      <div class="nav-group"><span class="nav-label">Reference</span><nav class="nav"><button class="nav-item" data-view="playbook"><svg><use href="#i-book"/></svg><span>Response Playbook</span></button></nav></div>
+      <div class="sidebar-spacer"></div>
+      <div class="sidebar-links"><a href="https://docs.google.com/spreadsheets/d/1ePKz6ltVfo9Bs_oDsMhXT2GlnvkJW8zl_9QJi8KCjpE/edit" target="_blank" rel="noopener"><svg><use href="#i-database"/></svg><span>Open live Sheet</span><svg class="mini"><use href="#i-external"/></svg></a><a href="https://docs.google.com/spreadsheets/d/1Y7iAestbfcH57WpSpIYIjM1eA27MaDnJuipnvAejEgg/edit" target="_blank" rel="noopener"><svg><use href="#i-calendar"/></svg><span>Fee Waiver Tracker</span><svg class="mini"><use href="#i-external"/></svg></a></div>
+      <div class="privacy-note"><svg><use href="#i-shield"/></svg><div><strong>Private by design</strong><p>Workbook data stays in this browser and is never committed to GitHub.</p></div></div>
     </aside>
+    <div class="sidebar-scrim" id="sidebarScrim"></div>
 
     <main class="main">
-      <header class="topbar">
-        <button class="icon-btn mobile-menu" id="menuBtn" aria-label="Toggle menu">☰</button>
-        <div class="top-title">
-          <h1 id="pageTitle">Control Center</h1>
-          <span id="syncText">No workbook loaded</span>
-        </div>
-        <div class="top-actions">
-          <a class="ghost" id="sheetLink" href="https://docs.google.com/spreadsheets/d/1ePKz6ltVfo9Bs_oDsMhXT2GlnvkJW8zl_9QJi8KCjpE/edit" target="_blank" rel="noopener">Open Sheet</a>
-          <a class="ghost desktop-only" href="https://docs.google.com/spreadsheets/d/1Y7iAestbfcH57WpSpIYIjM1eA27MaDnJuipnvAejEgg/edit" target="_blank" rel="noopener">Fee Waivers</a>
-          <a class="primary" id="downloadWorkbook" href="https://docs.google.com/spreadsheets/d/1ePKz6ltVfo9Bs_oDsMhXT2GlnvkJW8zl_9QJi8KCjpE/export?format=xlsx" target="_blank" rel="noopener">Download latest</a>
-          <label class="primary file-label" for="workbookInput">Import .xlsx</label>
-          <input id="workbookInput" type="file" accept=".xlsx,.xls" hidden />
-          <button class="icon-btn" id="themeBtn" aria-label="Toggle theme">◐</button>
-        </div>
-      </header>
+      <header class="topbar"><div class="topbar-left"><button class="icon-btn menu-btn" id="menuBtn" aria-label="Open navigation"><svg><use href="#i-menu"/></svg></button><div class="top-title"><h1 id="pageTitle">Dashboard</h1><span id="pageSubtitle">Your Fall 2027 outreach control center</span></div></div><div class="topbar-right"><button class="command-search" id="globalSearchBtn"><svg><use href="#i-search"/></svg><span>Search everything</span><kbd>Ctrl K</kbd></button><button class="freshness-chip" id="freshnessChip" data-state="empty"><span class="freshness-dot"></span><span id="freshnessText">No data</span></button><button class="btn btn-primary" id="updateDataBtn"><svg><use href="#i-refresh"/></svg><span>Update data</span></button><button class="icon-btn" id="themeBtn" aria-label="Toggle theme"><svg id="themeIcon"><use href="#i-moon"/></svg></button></div></header>
 
-      <section id="emptyState" class="empty-state">
-        <div class="empty-icon">↥</div>
-        <h2>Load your outreach tracker</h2>
-        <p>Download the latest workbook from Google Sheets, then import it here. The dashboard will stay cached on this device until you clear it.</p>
-        <div class="empty-actions">
-          <a class="primary large" href="https://docs.google.com/spreadsheets/d/1ePKz6ltVfo9Bs_oDsMhXT2GlnvkJW8zl_9QJi8KCjpE/export?format=xlsx" target="_blank" rel="noopener">1. Download latest workbook</a>
-          <label class="secondary large" for="workbookInput">2. Import workbook</label>
-        </div>
-        <div class="drop-zone" id="dropZone">or drag & drop the .xlsx file here</div>
-      </section>
+      <section id="emptyState" class="empty-state"><div class="onboarding-card"><div class="onboarding-icon"><svg><use href="#i-database"/></svg></div><span class="eyebrow">FIRST-TIME SETUP</span><h2>Turn your outreach spreadsheet into a focused workspace.</h2><p>Import the current Excel export of your live tracker. Nothing is uploaded to this site; parsing happens locally in your browser.</p><div class="onboarding-steps"><a class="setup-step" href="https://docs.google.com/spreadsheets/d/1ePKz6ltVfo9Bs_oDsMhXT2GlnvkJW8zl_9QJi8KCjpE/export?format=xlsx" target="_blank" rel="noopener"><span>1</span><div><strong>Download latest workbook</strong><small>Export the current Google Sheet as .xlsx</small></div><svg><use href="#i-external"/></svg></a><button class="setup-step" id="emptyImportBtn"><span>2</span><div><strong>Import workbook</strong><small>Select the downloaded .xlsx file</small></div><svg><use href="#i-upload"/></svg></button></div><div class="drop-zone" id="dropZone"><svg><use href="#i-upload"/></svg><div><strong>Drop the workbook here</strong><span>or click to browse</span></div></div><div class="onboarding-foot"><svg><use href="#i-shield"/></svg><span>Your browser remembers the parsed snapshot on this device. You can clear it anytime.</span></div></div></section>
 
       <div id="appContent" class="hidden">
-        <section class="view active" id="view-dashboard">
-          <div class="hero-panel">
-            <div>
-              <span class="eyebrow">TODAY</span>
-              <h2>What needs your attention?</h2>
-              <p>Replies, meetings and due follow-ups first. New outreach comes after active conversations.</p>
-            </div>
-            <div class="hero-time">
-              <span id="todayLabel"></span>
-              <strong id="localClock"></strong>
-              <small>Asia/Dhaka</small>
-            </div>
-          </div>
+        <div class="stale-banner hidden" id="staleBanner"><div><strong>Your local snapshot may be outdated.</strong><span>Download and import the latest workbook before making outreach decisions.</span></div><button class="btn btn-secondary" data-update-data>Refresh snapshot</button></div>
+        <section class="view active" id="view-dashboard"><div class="dashboard-hero"><div class="hero-copy"><span class="eyebrow">TODAY'S WORKSPACE</span><h2 id="heroHeading">Focus on active conversations first.</h2><p id="heroSummary">Replies, meetings and due follow-ups come before preparing new outreach.</p><div class="hero-actions"><button class="btn btn-light" data-go="actions">Open Action Queue <svg><use href="#i-chevron"/></svg></button><button class="btn btn-ghost-light" data-update-data><svg><use href="#i-refresh"/></svg> Refresh data</button></div></div><div class="hero-date"><span id="todayLabel"></span><strong id="localClock"></strong><small>Asia/Dhaka</small></div></div><div class="metric-grid" id="metricGrid"></div><div class="dashboard-grid"><section class="panel panel-priority span-2"><div class="panel-head"><div><span class="eyebrow">PRIORITY QUEUE</span><h3>Do these first</h3><p>The highest-impact items from your current Action Queue.</p></div><button class="text-btn" data-go="actions">View all <svg><use href="#i-chevron"/></svg></button></div><div id="priorityList" class="priority-list"></div></section><section class="panel"><div class="panel-head"><div><span class="eyebrow">NEXT COMMITMENT</span><h3>Upcoming focus</h3></div></div><div id="nextEvent" class="event-card"></div></section><section class="panel"><div class="panel-head"><div><span class="eyebrow">PIPELINE</span><h3>Graduate outreach</h3></div><span class="panel-number" id="pipelineTotal"></span></div><div id="pipelineBars" class="pipeline-bars"></div></section><section class="panel span-2"><div class="panel-head"><div><span class="eyebrow">RECENT ACTIVITY</span><h3>Meaningful interactions</h3><p>Only state-changing exchanges from the Interaction Log.</p></div></div><div id="recentInteractions" class="timeline"></div></section></div></section>
 
-          <div class="metric-grid" id="metricGrid"></div>
+        <section class="view" id="view-actions"><div class="view-heading"><div><span class="eyebrow">ACTION QUEUE</span><h2>What should I do next?</h2><p>Passive waiting is intentionally excluded. Work from top to bottom.</p></div><div class="view-heading-stat"><strong id="actionVisibleCount">0</strong><span>visible items</span></div></div><div class="filter-bar sticky-filter"><div class="segmented" id="actionUrgencyFilter"><button class="active" data-value="ALL">All</button><button data-value="NOW">Now</button><button data-value="TODAY">Today</button><button data-value="NEXT">Next</button><button data-value="PREP">Prep</button><button data-value="INFO">Info</button></div><div class="filter-actions"><select id="actionWorkflowFilter" aria-label="Workflow filter"><option value="ALL">All workflows</option></select><div class="search-field"><svg><use href="#i-search"/></svg><input id="actionSearch" type="search" placeholder="Search action queue" /></div></div></div><div id="actionCards" class="card-list"></div></section>
 
-          <div class="dashboard-grid">
-            <section class="panel span-2">
-              <div class="panel-head">
-                <div>
-                  <span class="eyebrow">PRIORITY QUEUE</span>
-                  <h3>Do these first</h3>
-                </div>
-                <button class="link-btn" data-go="actions">View all →</button>
-              </div>
-              <div id="priorityList" class="priority-list"></div>
-            </section>
+        <section class="view" id="view-professors"><div class="view-heading"><div><span class="eyebrow">MASTER TRACKER</span><h2>Professor database</h2><p>Search, filter and open a record to see the full outreach context.</p></div><div class="view-heading-stat"><strong id="professorCount">0</strong><span>records</span></div></div><div class="filter-bar professor-filter sticky-filter"><div class="search-field search-wide"><svg><use href="#i-search"/></svg><input id="professorSearch" type="search" placeholder="Search professor, university, research area or next action" /></div><select id="countryFilter"><option value="ALL">All countries</option></select><select id="statusFilter"><option value="ALL">All statuses</option></select><select id="trackFilter"><option value="ALL">All CV tracks</option></select><select id="professorSort"><option value="priority">Sort: Priority</option><option value="university">Sort: University</option><option value="status">Sort: Status</option><option value="recent">Sort: Recent activity</option></select><div class="view-toggle" aria-label="Display mode"><button class="active" data-prof-view="table" title="Table view"><svg><use href="#i-list"/></svg></button><button data-prof-view="cards" title="Card view"><svg><use href="#i-grid"/></svg></button></div></div><div id="activeFilterRow" class="active-filter-row"></div><div id="professorTableWrap" class="table-card"><div class="table-scroll"><table><thead><tr><th>Professor</th><th>University</th><th>Country</th><th>Research track</th><th>Priority</th><th>Status</th><th>Reply</th><th>Next action</th><th></th></tr></thead><tbody id="professorTable"></tbody></table></div></div><div id="professorCardGrid" class="record-grid hidden"></div></section>
 
-            <section class="panel">
-              <div class="panel-head">
-                <div>
-                  <span class="eyebrow">PIPELINE</span>
-                  <h3>Current state</h3>
-                </div>
-              </div>
-              <div id="pipelineBars" class="pipeline-bars"></div>
-            </section>
-
-            <section class="panel">
-              <div class="panel-head">
-                <div>
-                  <span class="eyebrow">NEXT EVENT</span>
-                  <h3>Upcoming focus</h3>
-                </div>
-              </div>
-              <div id="nextEvent" class="event-card"></div>
-            </section>
-
-            <section class="panel span-2">
-              <div class="panel-head">
-                <div>
-                  <span class="eyebrow">RECENT ACTIVITY</span>
-                  <h3>Meaningful interactions</h3>
-                </div>
-              </div>
-              <div id="recentInteractions" class="timeline"></div>
-            </section>
-          </div>
-        </section>
-
-        <section class="view" id="view-actions">
-          <div class="section-toolbar">
-            <div class="segmented" id="actionUrgencyFilter">
-              <button class="active" data-value="ALL">All</button>
-              <button data-value="NOW">Now</button>
-              <button data-value="TODAY">Today</button>
-              <button data-value="NEXT">Next</button>
-              <button data-value="PREP">Prep</button>
-              <button data-value="INFO">Info</button>
-            </div>
-            <div class="toolbar-right">
-              <select id="actionWorkflowFilter" aria-label="Workflow filter"><option value="ALL">All workflows</option></select>
-              <input class="search" id="actionSearch" type="search" placeholder="Search queue…" />
-            </div>
-          </div>
-          <div id="actionCards" class="card-list"></div>
-        </section>
-
-        <section class="view" id="view-professors">
-          <div class="section-toolbar wrap">
-            <div class="toolbar-right grow">
-              <input class="search grow" id="professorSearch" type="search" placeholder="Search professor, university, track…" />
-              <select id="countryFilter"><option value="ALL">All countries</option></select>
-              <select id="statusFilter"><option value="ALL">All statuses</option></select>
-              <select id="trackFilter"><option value="ALL">All tracks</option></select>
-            </div>
-          </div>
-          <div class="table-card">
-            <div class="table-summary"><span id="professorCount">0</span> records</div>
-            <div class="table-scroll">
-              <table>
-                <thead><tr><th>Professor</th><th>University</th><th>Country</th><th>Track</th><th>Priority</th><th>Status</th><th>Reply</th><th>Next action</th></tr></thead>
-                <tbody id="professorTable"></tbody>
-              </table>
-            </div>
-          </div>
-        </section>
-
-        <section class="view" id="view-research">
-          <div class="section-toolbar">
-            <div><span class="eyebrow">RESEARCH / RA</span><h2 class="section-title">Research outreach</h2></div>
-            <input class="search" id="researchSearch" type="search" placeholder="Search…" />
-          </div>
-          <div id="researchCards" class="card-list"></div>
-        </section>
-
-        <section class="view" id="view-career">
-          <div class="section-toolbar">
-            <div><span class="eyebrow">CAREER</span><h2 class="section-title">Jobs, internships & fellowships</h2></div>
-            <input class="search" id="careerSearch" type="search" placeholder="Search…" />
-          </div>
-          <div id="careerCards" class="card-list"></div>
-        </section>
-
-        <section class="view" id="view-playbook">
-          <div class="playbook-intro">
-            <span class="eyebrow">RESPONSE LOGIC</span>
-            <h2>What to do when a professor replies</h2>
-            <p>Use this before changing a conversation state. Gmail remains the evidence source.</p>
-          </div>
-          <div id="playbookGrid" class="playbook-grid"></div>
-        </section>
+        <section class="view" id="view-research"><div class="view-heading"><div><span class="eyebrow">RESEARCH / RA</span><h2>Research outreach</h2><p>Internships, RA roles and research-position conversations.</p></div><div class="view-heading-stat"><strong id="researchCount">0</strong><span>records</span></div></div><div class="filter-bar sticky-filter"><div class="search-field search-wide"><svg><use href="#i-search"/></svg><input id="researchSearch" type="search" placeholder="Search research outreach" /></div></div><div id="researchCards" class="record-grid"></div></section>
+        <section class="view" id="view-career"><div class="view-heading"><div><span class="eyebrow">CAREER</span><h2>Jobs, internships & fellowships</h2><p>Active semiconductor, academic and research career processes.</p></div><div class="view-heading-stat"><strong id="careerCount">0</strong><span>records</span></div></div><div class="filter-bar sticky-filter"><div class="search-field search-wide"><svg><use href="#i-search"/></svg><input id="careerSearch" type="search" placeholder="Search career tracker" /></div></div><div id="careerCards" class="record-grid"></div></section>
+        <section class="view" id="view-playbook"><div class="view-heading"><div><span class="eyebrow">RESPONSE LOGIC</span><h2>Response Playbook</h2><p>Classify a reply before changing tracker state or starting a follow-up clock.</p></div></div><div class="filter-bar sticky-filter"><div class="search-field search-wide"><svg><use href="#i-search"/></svg><input id="playbookSearch" type="search" placeholder="Search response type, action or rule" /></div></div><div id="playbookGrid" class="playbook-grid"></div></section>
       </div>
     </main>
   </div>
 
-  <div class="toast" id="toast" role="status"></div>
+  <nav class="mobile-bottom-nav" id="mobileBottomNav" aria-label="Mobile navigation"><button class="active" data-view="dashboard"><svg><use href="#i-home"/></svg><span>Home</span></button><button data-view="actions"><svg><use href="#i-check"/></svg><span>Actions</span><b id="mobileActionCount">0</b></button><button data-view="professors"><svg><use href="#i-users"/></svg><span>Professors</span></button><button id="mobileMore"><svg><use href="#i-menu"/></svg><span>More</span></button></nav>
+
+  <div class="modal-backdrop hidden" id="updateModal" role="dialog" aria-modal="true" aria-labelledby="updateModalTitle"><div class="modal-card"><button class="modal-close icon-btn" data-close-modal="updateModal" aria-label="Close"><svg><use href="#i-x"/></svg></button><div class="modal-icon"><svg><use href="#i-refresh"/></svg></div><span class="eyebrow">DATA UPDATE</span><h2 id="updateModalTitle">Refresh your local snapshot</h2><p>This site never receives your workbook. Download the latest export, then select it here for local parsing.</p><div class="update-summary" id="updateSummary"></div><div class="update-steps"><a class="btn btn-secondary wide" href="https://docs.google.com/spreadsheets/d/1ePKz6ltVfo9Bs_oDsMhXT2GlnvkJW8zl_9QJi8KCjpE/export?format=xlsx" target="_blank" rel="noopener"><span class="step-number">1</span> Download latest workbook <svg><use href="#i-external"/></svg></a><button class="btn btn-primary wide" id="modalImportBtn"><span class="step-number">2</span> Import downloaded .xlsx <svg><use href="#i-upload"/></svg></button></div><button class="danger-link" id="clearLocalData">Clear cached tracker data from this browser</button></div></div>
+  <div class="modal-backdrop hidden" id="searchModal" role="dialog" aria-modal="true" aria-labelledby="searchModalTitle"><div class="search-modal-card"><div class="global-search-input"><svg><use href="#i-search"/></svg><input id="globalSearchInput" type="search" placeholder="Search professors, universities, actions, research or career…" autocomplete="off" /><kbd>Esc</kbd></div><div class="search-results" id="globalSearchResults"><div class="search-hint"><svg><use href="#i-command"/></svg><p>Type anything to search across your imported workspace.</p></div></div></div></div>
+  <div class="drawer-backdrop hidden" id="drawerBackdrop"></div><aside class="detail-drawer" id="detailDrawer" aria-hidden="true"><div class="drawer-head"><div><span class="eyebrow" id="drawerEyebrow">DETAILS</span><h2 id="drawerTitle">Record</h2><p id="drawerSubtitle"></p></div><button class="icon-btn" id="drawerClose" aria-label="Close details"><svg><use href="#i-x"/></svg></button></div><div class="drawer-actions" id="drawerActions"></div><div class="drawer-body" id="drawerBody"></div></aside>
+  <input id="workbookInput" type="file" accept=".xlsx,.xls" hidden />
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
 </body>
 </html>
