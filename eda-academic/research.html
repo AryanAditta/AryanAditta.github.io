@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>VLSI/EDA Research · Arian Rahman Aditta</title>
-  <meta name="description" content="VLSI/EDA research by Arian Rahman Aditta in learning-guided physical design, source-aware RTL area/timing prediction and physically grounded design automation." />
+  <meta name="description" content="VLSI/EDA research by Arian Rahman Aditta in GRACE relational floorplanning, source-aware RTL area/timing prediction and ongoing power and OpenROAD physical-design extensions." />
   <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css?v=3" /><link rel="stylesheet" href="polish.css?v=8" />
@@ -23,19 +23,20 @@
         <div class="eda-flagship-summary">
           <div class="status-row"><span class="badge submitted">Manuscript Submitted</span><span class="badge first">First Author</span></div>
           <p class="meta">Physical Design Research · 2026–Present</p>
-          <h2>Learning-Guided Constraint-Rich VLSI Floorplanning</h2>
-          <div class="research-question"><strong>Research question:</strong> How much of high-quality constrained floorplanning can be learned from circuit structure and where is explicit combinatorial optimization still necessary?</div>
+          <h2>GRACE: GNN-Guided Relational Decoding with Convex Shaping and Exact Repair</h2>
+          <div class="research-question"><strong>Research question:</strong> Can a learned relational representation provide useful global floorplan structure while deterministic decoding, convex optimization and verified repair enforce legality and expose how much of the final gain actually comes from learning?</div>
         </div>
-        <div class="research-visual eda-flagship-visual"><a href="https://raw.githubusercontent.com/AryanAditta/AryanAditta/main/assets/research/gnn-sable-overview.png" target="_blank" rel="noopener"><img src="https://raw.githubusercontent.com/AryanAditta/AryanAditta/main/assets/research/gnn-sable-overview.png" alt="Overview of learning-guided VLSI floorplanning research" loading="lazy" /></a><span>Open full research overview ↗</span></div>
+        <div class="research-visual eda-flagship-visual" aria-label="GRACE pipeline summary"><div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;width:100%"><div style="padding:15px;border:1px solid #d6ddda;border-radius:8px;background:#fff"><strong style="display:block;color:#173b52;margin-bottom:5px">S1 · GNN relational decoding</strong><span style="font-size:12.5px;color:#596268">Predict separation relations, order keys and soft-block aspect ratios, then decode a hard-legal start.</span></div><div style="padding:15px;border:1px solid #d6ddda;border-radius:8px;background:#fff"><strong style="display:block;color:#173b52;margin-bottom:5px">S2 · Convex shaping</strong><span style="font-size:12.5px;color:#596268">Resize and place blocks for the decoded topology before grid snapping.</span></div><div style="padding:15px;border:1px solid #d6ddda;border-radius:8px;background:#fff"><strong style="display:block;color:#173b52;margin-bottom:5px">S3 · Exact repair</strong><span style="font-size:12.5px;color:#596268">Compact and packed routes combine constraint surgery, local moves and CP-SAT windows.</span></div><div style="padding:15px;border:1px solid #d6ddda;border-radius:8px;background:#fff"><strong style="display:block;color:#173b52;margin-bottom:5px">S4 · Leakage-free portfolio</strong><span style="font-size:12.5px;color:#596268">Retain the route with lower surrogate cost without reading the reference layout.</span></div></div><span>GRACE pipeline · submitted to ICEEICT 2027</span></div>
       </div>
       <div class="eda-flagship-detail">
         <ul>
-          <li>Investigates graph-based guidance for floorplanning while <strong>exact geometry and hard legality remain explicit</strong> rather than delegated to the learned model.</li>
-          <li>The submitted GNN-SABLE work combines graph-based guidance with <strong>B*-tree simulated annealing, structured legalization and exact feasibility handling</strong>.</li>
-          <li>Controlled follow-up studies examine the neural-legality gap and separate representation quality from output and feasibility limitations.</li>
-          <li>The work is positioned as learning-guided optimization rather than end-to-end replacement of the physical-design search process.</li>
+          <li>The GNN predicts <strong>relations rather than final coordinates</strong>: pairwise separation structure, ordering keys and soft-block shapes are converted by a deterministic decoder into a hard-legal starting layout.</li>
+          <li>A four-stage pipeline combines relational decoding, <strong>convex shaping</strong>, exact repair along compact and packed routes and leakage-free portfolio selection. Under the paper's legality definition, every reported stage remains hard-legal.</li>
+          <li>On <strong>100 unseen FloorSet-Lite confirmation layouts</strong>, GRACE achieved mean evaluation cost 1.501 versus 7.353 for matched-time single-worker PARSAC CA-SA, with HPWL/GT 1.177 versus 1.895 at essentially equal mean runtime (56.6 s versus 56.7 s).</li>
+          <li>A controlled start-stage ablation separates learning from post-processing: replacing the learned start with random relations preserves much of the cost advantage after repair but loses about <strong>85% of the wirelength advantage</strong>, showing that the learned component primarily improves global relational structure.</li>
+          <li>Boundary, grouping and MIB constraints remain soft-scored in this formulation, so the work does not claim universal fixed-outline or all-constraint satisfaction; remaining MIB and compactness limitations are reported explicitly.</li>
         </ul>
-        <ul class="tags"><li>VLSI Physical Design</li><li>Floorplanning</li><li>Graph Neural Networks</li><li>B*-Tree</li><li>Simulated Annealing</li><li>Legality</li><li>Combinatorial Optimization</li></ul>
+        <ul class="tags"><li>VLSI Physical Design</li><li>Floorplanning</li><li>Graph Neural Networks</li><li>Relational Decoding</li><li>Convex Optimization</li><li>CP-SAT</li><li>Exact Repair</li><li>Prospective Evaluation</li></ul>
       </div>
     </article>
 
@@ -51,13 +52,15 @@
       </div>
       <div class="eda-flagship-detail">
         <ul>
-          <li>Evaluates mapped standard-cell area and standardized pre-layout timing under a pinned <strong>Yosys/ABC, OpenSTA and Nangate45</strong> flow.</li>
-          <li>Uses <strong>source-connected grouping</strong> so related RTL designs do not cross development and evaluation folds.</li>
-          <li>Freezes candidate models and predictions before generating fresh labels, making prospective confirmation part of the evaluation protocol rather than a retrospective split.</li>
-          <li>Current results show a strong fresh-area confirmation and a smaller, more metric-sensitive timing improvement; the manuscript keeps those distinctions explicit.</li>
+          <li>The current journal draft evaluates mapped standard-cell area and standardized pre-layout timing under a pinned <strong>Yosys/ABC, OpenSTA and Nangate45</strong> flow.</li>
+          <li>Its development corpus contains <strong>681 labelled configurations grouped into 498 source components</strong>, with source-connected grouping and model-specific prediction freezes used to preserve information chronology.</li>
+          <li>On fresh prospective cohorts, the Area system reduced MAE from <strong>8,382 to 3,015 µm²</strong> on 39 paired designs, while TimingV2 reduced MAE from <strong>0.167 to 0.136 ns</strong> on a separate 39-design paired timing cohort. The manuscript keeps the stronger Area result and the more metric-sensitive Timing result distinct.</li>
+          <li><strong>Power extension in progress:</strong> a reusable RTL-to-power pilot is being developed around a fixed technology/library and activity contract, separating leakage, internal, switching and total power and optionally validating a smaller subset with simulation-derived activity.</li>
+          <li><strong>Physical-design extension in progress:</strong> a separate OpenROAD pilot carries selected RTL designs from synthesis and pre-layout OpenSTA through floorplanning, placement, CTS and routing while preserving stage-wise timing, area, utilization, wirelength, congestion and physical artifacts.</li>
+          <li>These Power and OpenROAD efforts are currently <strong>feasibility and labeling-pipeline extensions</strong>; they are not yet presented as completed prediction results or as evidence already integrated into the journal manuscript.</li>
         </ul>
         <p class="research-action"><a href="https://github.com/AryanAditta/rtl-qor-source-aware-evaluation" target="_blank" rel="noopener">Public GitHub repository ↗</a></p>
-        <ul class="tags"><li>RTL</li><li>Area Prediction</li><li>Timing Prediction</li><li>Yosys/ABC</li><li>OpenSTA</li><li>Source Grouping</li><li>Prospective Evaluation</li></ul>
+        <ul class="tags"><li>RTL</li><li>Area Prediction</li><li>Timing Prediction</li><li>Yosys/ABC</li><li>OpenSTA</li><li>Source Grouping</li><li>Prospective Evaluation</li><li>Power Pilot</li><li>OpenROAD Extension</li></ul>
       </div>
     </article>
 
@@ -93,6 +96,6 @@
     </section>
   </main>
 
-  <footer class="site-footer"><div class="wrap footer-grid"><div><strong>© 2026 Arian Rahman Aditta</strong><span>VLSI/EDA research · Dhaka, Bangladesh</span></div><div class="footer-links"><a href="mailto:aryanrahmanaditta@gmail.com">✉ Email</a><a href="https://scholar.google.com/citations?user=Id4ByyUAAAAJ&hl=en" target="_blank" rel="noopener">🎓 Scholar</a><a href="https://www.linkedin.com/in/arian-rahman-aditta/" target="_blank" rel="noopener">LinkedIn</a><a href="https://github.com/AryanAditta" target="_blank" rel="noopener">GitHub</a></div></div><p class="wrap" style="font-size:12px;padding-bottom:12px"><a href="privacy.html">Privacy</a> · <a href="privacy.html" data-analytics-settings>Analytics choices</a></p></footer>
+  <footer class="site-footer"><div class="wrap footer-grid"><div><strong>© 2026 Arian Rahman Aditta</strong><span>VLSI/EDA research · Dhaka, Bangladesh</span></div><div class="footer-links"><a href="mailto:aryanrahmanaditta@gmail.com">✉ Email</a><a href="https://scholar.google.com/citations?user=Id4ByyUAAAAJ&hl=en" target="_blank" rel="noopener">🎓 Scholar</a><a href="https://www.researchgate.net/profile/Arian-Aditta?ev=hdr_xprf" target="_blank" rel="noopener">ResearchGate</a><a href="https://www.linkedin.com/in/arian-rahman-aditta/" target="_blank" rel="noopener">LinkedIn</a><a href="https://github.com/AryanAditta" target="_blank" rel="noopener">GitHub</a></div></div><p class="wrap" style="font-size:12px;padding-bottom:12px"><a href="privacy.html">Privacy</a> · <a href="privacy.html" data-analytics-settings>Analytics choices</a></p></footer>
 </body>
 </html>
