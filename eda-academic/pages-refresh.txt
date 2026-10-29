@@ -1,0 +1,2 @@
+Purpose: force a clean GitHub Pages deployment after the GRACE figure asset was added.
+Date: 2026-10-29
